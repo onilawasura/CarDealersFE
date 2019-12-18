@@ -16,6 +16,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { ToastrModule } from 'ngx-toastr';
+import { CreateadComponent } from './createad/createad.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    CreateadComponent
   ],
   imports: [
     BrowserModule,
