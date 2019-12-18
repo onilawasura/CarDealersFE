@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class HomeComponent implements OnInit {
 
+  img: string  = "assets/Bugatti.jpg";
   constructor(private toastr: ToastrService) { }
 
   ngOnInit() {

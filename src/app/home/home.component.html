@@ -1,56 +1,22 @@
-<div class="container-fluid">
-  <div class="sidebar off-canvas-sidebar" data-background-color="white" data-active-color="danger">
-  	<div class="sidebar-wrapper">
-      <ul class="nav nav-mobile-menu">
+<!-- <div class="wrapper">
+  <div class="sidebar" data-background-color="white" data-active-color="danger">
+    <div class="sidebar-wrapper">
+      <ul class="nav">
         <li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="ti-panel"></i>
-            <p>Stats</p>
+          <a href="#">
+            <p>Category</p>
           </a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="ti-bell"></i>
-            <p class="notification">5</p>
-            <p>Notifications</p>
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Notification 1</a></li>
-            <li><a href="#">Notification 2</a></li>
-            <li><a href="#">Notification 3</a></li>
-            <li><a href="#">Notification 4</a></li>
-            <li><a href="#">Another notification</a></li>
-          </ul>
         </li>
         <li>
           <a href="#">
-            <i class="ti-settings"></i>
-            <p>Settings</p>
-          </a>
-        </li>
-      </ul>
-      <ul class="nav">
-        <li>
-          <a href="dashboard.html">
-            <i class="ti-panel"></i>
-            <p>Dashboard</p>
+            <p>Sort</p>
           </a>
         </li>
         <li>
-          <a href="user.html">
-            <i class="ti-user"></i>
-            <p>User Profile</p>
+          <a href="#">
+            <p>Price</p>
           </a>
         </li>
-        <li>
-          <a href="table.html">
-            <i class="ti-view-list-alt"></i>
-            <p>Table List</p>
-          </a>
-        </li>
-        <li>
-        
       </ul>
     </div>
   </div>
@@ -126,6 +92,143 @@
               <div class="cardcontent">
                 <div class="img">
                   
+                </div>
+              </div>
+              <div class="footer">
+                <h4 class="title">2015 Sales</h4>
+                <p class="category">All products including Taxes</p>
+                <div class="chart-legend">
+                  <i class="fa fa-circle text-info"></i> Tesla Model S
+                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                </div>
+                <hr>
+                <div class="stats">
+                  <i class="ti-check"></i> Data information certified
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container-fluid page-body-wrapper">
+  <nav class="sidebar sidebar-offcanvas">
+    <ul class="nav">
+      <li class="nav-item" style="padding-top: 70px;">
+        <a class="nav-link collapsed" data-toggle="collapse" href="#category" aria-expanded="false" aria-controls="ui-basic">
+          <span class="menu-title">Category</span>
+          <i class="fa fa-sort-down"></i>
+        </a>
+        <div class="collapse" id="category">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="#">Accordions</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Buttons</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Badges</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item" style="padding-top: 70px;">
+        <a class="nav-link" data-toggle="collapse" href="#sort" aria-expanded="false" aria-controls="form-elements">
+          <span class="menu-title">Sort</span>
+          <i class="fa fa-sort-down"></i>
+        </a>
+        <div class="collapse" id="sort">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="#">Accordions</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Buttons</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Badges</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item" style="padding-top: 70px;">
+        <a class="nav-link" data-toggle="collapse" href="#price" aria-expanded="false" aria-controls="form-elements">
+          <span class="menu-title">Price</span>
+          <i class="fa fa-sort-down"></i>
+        </a>
+        <div class="collapse" id="price">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="#">Accordions</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Buttons</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#">Badges</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="main-panel">
+    <div class="content">
+      <div class="container-fluid panel">
+        <div class="row">
+          <div class="col-md-6"> 
+            <div class="card">
+              <div class="cardcontent">
+                <div class="image">
+                  <img src="{{img}}" class="img" alt="profile image">
+                </div>
+              </div>
+              <div class="footer">
+                <h4 class="title">2015 Sales</h4>
+                <p class="category">All products including Taxes</p>
+                <div class="chart-legend">
+                  <i class="fa fa-circle text-info"></i> Tesla Model S
+                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                </div>
+                <hr>
+                <div class="stats">
+                  <i class="ti-check"></i> Data information certified
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="cardcontent">
+                <div class="image">
+                  <img src="{{img}}" class="img" alt="profile image">
+                </div>
+              </div>
+              <div class="footer">
+                <h4 class="title">2015 Sales</h4>
+                <p class="category">All products including Taxes</p>
+                <div class="chart-legend">
+                  <i class="fa fa-circle text-info"></i> Tesla Model S
+                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                </div>
+                <hr>
+                <div class="stats">
+                  <i class="ti-check"></i> Data information certified
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="cardcontent">
+                <div class="image">
+                  <img src="{{img}}" class="img" alt="profile image">
+                </div>
+              </div>
+              <div class="footer">
+                <h4 class="title">2015 Sales</h4>
+                <p class="category">All products including Taxes</p>
+                <div class="chart-legend">
+                  <i class="fa fa-circle text-info"></i> Tesla Model S
+                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                </div>
+                <hr>
+                <div class="stats">
+                  <i class="ti-check"></i> Data information certified
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="cardcontent">
+                <div class="image">
+                  <img src="{{img}}" class="img" alt="profile image">
                 </div>
               </div>
               <div class="footer">
