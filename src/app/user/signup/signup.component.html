@@ -4,7 +4,7 @@
 			<form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
 				<h1>Create Account</h1>
 				<div class="form-group required">
-					<label class="tagname">Username</label>
+					<label class="tagname">Username *</label>
 					<input class="form-control" formControlName="UserName">
 					<label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This
 					  field is mandatory.</label>
@@ -21,7 +21,7 @@
 				</div>
 				<div formGroupName="Passwords">
 					<div class="form-group required">
-					  <label class="tagname">Password</label>
+					  <label class="tagname">Password *</label>
 					  <input type="password" class="form-control" formControlName="Password">
 					  <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This
 						field is mandatory.</label>
@@ -29,7 +29,7 @@
 						4 characters required.</label>
 					</div>
 					<div class="form-group required">
-					  <label class="tagname">Confirm Password</label>
+					  <label class="tagname">Confirm Password *</label>
 					  <input type="password" class="form-control" formControlName="ConfirmPassword">
 					  <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This
 						field is mandatory.</label>
