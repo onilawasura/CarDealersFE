@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+   // this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
 }
