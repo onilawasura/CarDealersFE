@@ -1,6 +1,126 @@
-<ng-image-slider [images]="imageObject" #nav></ng-image-slider>
-
-<div >
-    <!-- <ng-image-slider [images]="imageObject" #nav></ng-image-slider> -->
-        <h1>{{advertisment.categoryType}}</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ng-image-slider [images]="imageObject" #nav></ng-image-slider>
+        </div> 
+    </div>
+    
+    <!-- <div class="col">
+        <ng-image-slider [images]="imageObject" #nav></ng-image-slider> 
+            <h1>{{advertisment.categoryType}}</h1>
+    </div> -->
+   
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Vehicle Details</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Category:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Brand:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Model:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Trim/Edition:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Model Year:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Condition:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Fuel Type:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Transmission:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Body Type:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Milage:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Engine Capacity:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Adveritistment Details</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Price:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Description:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Name:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Contact Number:</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="card-title">Rate Advetiser</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <br>
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="card-title">Google Map</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Comments</h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
