@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeServiceService {
+export class AdViewerService {
 
   constructor(private http: HttpClient) { }
 
@@ -12,10 +12,10 @@ export class HomeServiceService {
 
   getAdvertisementUrl: string;
 
-  getAdvertisements(){
-    this.getAdvertisementUrl  = this.BaseURI + '/advertistment';
+  getAdvertisement(id){
+    this.getAdvertisementUrl  = this.BaseURI + '/advertistment/'+id;
     //var requestHeader = new HttpHeaders({'No-Auth':'True'});
+    console.log(this.getAdvertisementUrl);
     return this.http.get(this.getAdvertisementUrl);
   }
-
 }

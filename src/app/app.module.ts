@@ -17,6 +17,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 import { CreateadComponent } from './createad/createad.component';
+import { HomeServiceService } from './home/Shared/home-service.service';
+import { AdViewerComponent } from './ad-viewer/ad-viewer.component';
+import { AdViewerService } from './ad-viewer/ad-viewer.service';
+
+import { NgImageSliderModule } from 'ng-image-slider';
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import { CreateadComponent } from './createad/createad.component';
     SignupComponent,
     HomeComponent,
     NavigationBarComponent,
-    CreateadComponent
+    CreateadComponent,
+    AdViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +43,10 @@ import { CreateadComponent } from './createad/createad.component';
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgImageSliderModule
   ],
-  providers: [],
+  providers: [HomeServiceService, AdViewerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

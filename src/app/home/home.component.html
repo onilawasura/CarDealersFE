@@ -46,73 +46,26 @@
     <div class="content">
       <div class="container-fluid panel">
         <div class="row">
-          <div class="col-md-6"> 
-            <div class="card">
-              <div class="cardcontent">
-                <div class="image">
-                  <img src="{{img}}" class="img" alt="profile image">
+          
+          <div class="col-md-6" id="comp"  *ngFor="let ad of adDetails"> 
+            <a href="/ad/{{ad.adId}}">
+              <div class="card">
+                <div class="cardcontent">
+                  <div class="image">
+                    <img src="{{ad.url}}" class="img" alt="profile image">
+                    <!-- {{ad.url}} -->
+                  </div>
+                </div>
+                <div class="footer">
+                  <h4 class="title">{{ad.adTitle}}</h4>
+                  <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
+                  <hr>
+                  <div class="stats">
+                    <h6> Price: Rs. {{ad.price | number}}.00</h6>
+                  </div>
                 </div>
               </div>
-              <div class="footer">
-                <h4 class="title">Honda Civic Type R</h4>
-                <p class="category">Colombo <br> Car </p>
-                <hr>
-                <div class="stats">
-                  <h6> Price:</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="cardcontent">
-                <div class="image">
-                  <img src="{{img}}" class="img" alt="profile image">
-                </div>
-              </div>
-              <div class="footer">
-                <h4 class="title">Honda Civic Type R</h4>
-                <p class="category">Colombo <br> Car </p>
-                <hr>
-                <div class="stats">
-                  <h6> Price:</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="cardcontent">
-                <div class="image">
-                  <img src="{{img}}" class="img" alt="profile image">
-                </div>
-              </div>
-              <div class="footer">
-                <h4 class="title">Honda Civic Type R</h4>
-                <p class="category">Colombo <br> Car </p>
-                <hr>
-                <div class="stats">
-                  <h6> Price:</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="cardcontent">
-                <div class="image">
-                  <img src="{{img}}" class="img" alt="profile image">
-                </div>
-              </div>
-              <div class="footer">
-                <h4 class="title">Honda Civic Type R</h4>
-                <p class="category">Colombo <br> Car </p>
-                <hr>
-                <div class="stats">
-                  <h6> Price:</h6>
-                </div>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
