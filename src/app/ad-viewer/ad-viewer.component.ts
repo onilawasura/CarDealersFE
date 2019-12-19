@@ -12,13 +12,14 @@ export class AdViewerComponent implements OnInit {
   currentUrlId: string;
   images: string[];
   advertisment: any;
- // imageObject: Array<object> ;
+  imageObject: Array<object> ;
 
   constructor(private adViewerService: AdViewerService,  private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.getAdvertisement();
+    //this.setImages();
   }
 
    
@@ -43,47 +44,37 @@ getAdvertisement(){
 }
 
 setImages(img){
-  // imageObject: [{
-  //   image : 'http://localhost:54886//Content/Images//Fol_1/1_1.jpg' // Youtube url
-  //   //video: 'https://www.youtube.com/watch?v=dJ0JLKfHGlo'
-  // },
-  // {
-  //   image : 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg' // MP4 Video url
-  // },
-  // {
-  //   image : 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg'
-  //    // posterImage: 'assets/img/slider/2_min.jpeg', //Optional: You can use this key if you want to show video poster image in slider
-  //    // title: 'Image title'
-  // },
-  // {
-  //   image : 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg'
-  //    // thumbImage: 'assets/img/slider/1_min.jpeg',
-  //    // alt: 'Image alt'
-  // }
-  // ];
+  this.imageObject = [{
+    image: img[0],
+    thumbImage: img[0],
+    alt: 'Image alt' 
+  },
+  {
+    image: img[1],
+    thumbImage: img[1],
+    alt: 'Image alt' 
+  },
+  {
+    image: img[2],
+    thumbImage: img[2],
+    alt: 'Image alt' 
+  },
+  {
+    image: img[3],
+    thumbImage: img[3],
+    alt: 'Image alt' 
+  },
+  {
+    image: img[4],
+    thumbImage: img[4],
+    alt: 'Image alt' 
+  }
+  ];
 }
 
-imageObject: Array<object> = [{
-  image: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  thumbImage: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  alt: 'Image alt' // Youtube url
-},
-{
-  image: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  thumbImage: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  alt: 'Image alt' // MP4 Video url
-},
-{
-  image: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  thumbImage: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  alt: 'Image alt'
-},
-{
-image: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  thumbImage: 'http://localhost:54886//Content/Images//Fol_1/1_2.jpg',
-  alt: 'Image alt'
-}
-];
+
+
+
 
 
 }
