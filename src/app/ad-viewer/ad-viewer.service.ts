@@ -13,7 +13,7 @@ export class AdViewerService {
   getAdvertisementUrl: string;
 
   getAdvertisement(id){
-    this.getAdvertisementUrl  = this.BaseURI + '/advertistment/'+id;
+    this.getAdvertisementUrl  = this.BaseURI + '/advertistment/GetAdvertisment/'+id;
     //var requestHeader = new HttpHeaders({'No-Auth':'True'});
     console.log(this.getAdvertisementUrl);
     return this.http.get(this.getAdvertisementUrl);

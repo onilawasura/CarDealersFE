@@ -4,16 +4,16 @@
         <h3 class="card-title">Vehicle Details</h3>
       </div>
       <div class="card-body">
-        <form>
+        <!-- <form> -->
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="Category">Category</label>
-                <select class="form-control browser-default custom-select">
-                    <option value="1">Car</option>
-                    <option value="2">Van</option>
-                    <option value="3">Lorry</option>
-                    <option value="4">Bike</option>
+                <select class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.CategoryId" (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
+                    <option value=""  selected="selected" >Please Select a Category</option> 
+                    <option [selected]="category.Name=='Select name'" 
+                    [disabled]="category.name=='Select name'"
+                     *ngFor="let category of categoryData" value={{category.id}}>{{category.name}}</option>
                 </select>
               </div>
             </div><!-- Col -->
@@ -21,23 +21,9 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="brand">Brand</label>
-                    <select id="brand" class="form-control browser-default custom-select">
-                        <option value="1">Honda</option>
-                        <option value="2">Toyota</option>
-                        <option value="3">Suzuki</option>
-                        <option value="4">Volkswagen</option>
-                        <option value="5">Frod</option>
-                        <option value="6">Nissan</option>
-                        <option value="7">Chevrolet</option>
-                        <option value="8">Kia</option>
-                        <option value="9">Mercedes</option>
-                        <option value="10">Renault</option>
-                        <option value="11">BMW</option>
-                        <option value="12">Audi</option>
-                        <option value="13">Mazda</option>
-                        <option value="14">Peugeot</option>
-                        <option value="15">Mitsubishi</option>
-                        <option value="16">Subaru</option>
+                    <select id="brand" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.BrandId">
+                        <option value="1">Please Select a Brand</option>
+                        <option value="2" *ngFor="let brand of brandData" value={{brand.id}}>{{brand.name}}</option>
                     </select>
                 </div>
             </div><!-- Col -->
@@ -172,7 +158,7 @@
                 </div>
               </div><!-- Col -->
           </div><!-- Row -->
-        </form>
+        <!-- </form> -->
       </div>
     </div>
 

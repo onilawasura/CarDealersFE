@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <ng-image-slider [images]="imageObject" #nav></ng-image-slider>
+            <ng-image-slider [images]="imageObject" #nav class="imageslider"></ng-image-slider>
         </div> 
     </div>
     
@@ -19,12 +19,12 @@
                 <div class="card-body">
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Category:</label>
+                            <label class="title">Category: {{advertisment.categoryType}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Brand:</label>
+                            <label class="title">Brand:{{advertisment.brandType}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          

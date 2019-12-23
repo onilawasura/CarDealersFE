@@ -84,6 +84,8 @@ input {
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+	height: 30px;
+	font-size: 12px;
 }
 
 .container {
@@ -174,4 +176,15 @@ input {
 	right: 0;
 	transform: translateX(0);
 }
-
+.tagname{
+	font-size: 12px;
+	margin: 0;
+	text-align: left;
+}
+.form-group{
+	margin: 0;
+}
+.text-danger{
+	font-size: 10px;
+	margin: 0;;
+}

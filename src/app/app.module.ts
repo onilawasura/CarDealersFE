@@ -22,6 +22,7 @@ import { AdViewerComponent } from './ad-viewer/ad-viewer.component';
 import { AdViewerService } from './ad-viewer/ad-viewer.service';
 
 import { NgImageSliderModule } from 'ng-image-slider';
+import { CreateAdService } from './createad/create-ad.service';
 
 
 
@@ -46,7 +47,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
     HttpClientModule,
     NgImageSliderModule
   ],
-  providers: [HomeServiceService, AdViewerService],
+  providers: [HomeServiceService, AdViewerService, CreateAdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

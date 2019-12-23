@@ -13,7 +13,7 @@ export class HomeServiceService {
   getAdvertisementUrl: string;
 
   getAdvertisements(){
-    this.getAdvertisementUrl  = this.BaseURI + '/advertistment';
+    this.getAdvertisementUrl  = this.BaseURI + '/advertistment/GetAllAdvertisment';
     //var requestHeader = new HttpHeaders({'No-Auth':'True'});
     return this.http.get(this.getAdvertisementUrl);
   }
