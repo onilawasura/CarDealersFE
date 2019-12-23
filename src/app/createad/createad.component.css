@@ -17,12 +17,12 @@
 .btn{
     border: 1px solid #08979D;
     color: #08979D;
-    border-radius: 25px;
+    border-radius: 16px;
     margin: 5px;
-    padding: 15px;
+    padding: 10px;
 }
 .btn:hover{
     border: 1px solid #08979D;
     background-color: #08979D;
-    color:#ffffff;
+    color:#FFFFFF;
 }
