@@ -16,9 +16,13 @@
 }
 .btn{
     border: 1px solid #08979D;
-    color: #FFFFFF;
+    color: #08979D;
     border-radius: 16px;
-    background-color: #08979D;
     margin: 5px;
-    padding: 15px;
+    padding: 10px;
+}
+.btn:hover{
+    border: 1px solid #08979D;
+    background-color: #08979D;
+    color:#FFFFFF;
 }
