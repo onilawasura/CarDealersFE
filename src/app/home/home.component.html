@@ -1,8 +1,8 @@
 <div class="container-fluid page-body-wrapper">
-  <nav class="sidebar sidebar-offcanvas">
+  <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item" style="padding-top: 70px;">
-        <a class="nav-link collapsed" data-toggle="collapse" href="#category" aria-expanded="false" aria-controls="ui-basic">
+        <a class="nav-link collapsed" id="dropdown-toggle" data-toggle="collapse" href="#category" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-title">Category</span>
           <i class="fa fa-sort-down"></i>
         </a>
@@ -14,21 +14,21 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item" style="padding-top: 70px;">
-        <a class="nav-link" data-toggle="collapse" href="#sort" aria-expanded="false" aria-controls="form-elements">
+      <li class="nav-item " style="padding-top: 70px;">
+        <a class="nav-link collapsed" id="dropdown-toggle" data-toggle="collapse" href="#sort" aria-expanded="false" aria-controls="form-elements">
           <span class="menu-title">Sort</span>
           <i class="fa fa-sort-down"></i>
         </a>
         <div class="collapse" id="sort">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#">Latest Advertistments</a></li>
+            <li class="nav-item"> <a class="nav-link" href="#" >Latest Advertistments</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Assending Order by date</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Desending Order by date</a></li>
           </ul>
         </div>
       </li>
       <li class="nav-item" style="padding-top: 70px;">
-        <a class="nav-link" data-toggle="collapse" href="#price" aria-expanded="false" aria-controls="form-elements">
+        <a class="nav-link collapsed" id="dropdown-toggle" data-toggle="collapse" href="#price" aria-expanded="false" aria-controls="form-elements">
           <span class="menu-title">Price</span>
           <i class="fa fa-sort-down"></i>
         </a>
@@ -41,12 +41,16 @@
         </div>
       </li>
     </ul>
-  </nav>
+  </nav> 
+
   <div class="main-panel">
     <div class="content">
       <div class="container-fluid panel">
         <div class="row">
-          
+          <button type="button" id="sidebarCollapse" class="btn">
+            <i class="fa fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+          </button>
           <div class="col-md-6" id="comp"  *ngFor="let ad of adDetails"> 
             <a href="/ad/{{ad.adId}}">
               <div class="card">
