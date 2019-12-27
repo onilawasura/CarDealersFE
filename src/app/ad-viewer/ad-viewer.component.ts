@@ -23,9 +23,6 @@ export class AdViewerComponent implements OnInit {
   }
 
    
-  
-  
-
 getAdvertisement(){
 
   this.activatedRoute.params.subscribe(paramsId => {
@@ -71,11 +68,6 @@ setImages(img){
   }
   ];
 }
-
-
-
-
-
 
 }
 
