@@ -5,6 +5,7 @@ import {SignupComponent} from './user/signup/signup.component';
 import {HomeComponent} from './home/home.component';
 import {CreateadComponent} from './createad/createad.component'
 import { AdViewerComponent } from './ad-viewer/ad-viewer.component';
+import { TestComponentComponent } from './test-component/test-component.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'home', component:HomeComponent},
   {path: 'postad', component:CreateadComponent},
-  {path: 'ad/:id', component:AdViewerComponent}
+  {path: 'ad/:id', component:AdViewerComponent},
+  {path: 'test', component: TestComponentComponent}
 ];
 
 @NgModule({

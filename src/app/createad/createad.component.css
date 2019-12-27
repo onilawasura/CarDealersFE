@@ -36,3 +36,7 @@
     background-color: #6EC6CA;
     color:#FFFFFF;
 }
+
+agm-map {
+    height: 300px;
+  }

@@ -24,6 +24,9 @@ import { AdViewerService } from './ad-viewer/ad-viewer.service';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { CreateAdService } from './createad/create-ad.service';
 
+import { AgmCoreModule } from '@agm/core';
+import { TestComponentComponent } from './test-component/test-component.component';
+
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { CreateAdService } from './createad/create-ad.service';
     HomeComponent,
     NavigationBarComponent,
     CreateadComponent,
-    AdViewerComponent
+    AdViewerComponent,
+    TestComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,10 @@ import { CreateAdService } from './createad/create-ad.service';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBsfNaHgeIjbCfsxJoLxPyYXk8LZhcoxuw'
+    })
   ],
   providers: [HomeServiceService, AdViewerService, CreateAdService],
   bootstrap: [AppComponent]
