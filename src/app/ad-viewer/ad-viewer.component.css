@@ -1,12 +1,54 @@
+
 .title{
     font-size: 12px;
 }
 .card-header{
     padding: 10px;
+    background: #6EC6CA;
 }
-.card-title{
+.card-title {
     margin:0;
+    color:#110133;
 }
 .imageslider{
     padding-left: 250px;
+}
+agm-map {
+    height: 230px;
+  }
+
+.sub-title{
+    font-weight: bold;
+    color:#110133;
+}
+
+.title{
+    color: #110133;
+    font-size: 12px;
+}
+.star-rating {
+	border: 0;
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 2em;
+	justify-content: auto;
+	text-align: center;
+	width: 5em;
+}
+
+.star-rating input {
+	display: none;
+}
+
+.star-rating label {
+	color: rgb(128, 128, 128);
+	cursor: pointer;
+}
+
+.star-rating :checked ~ label {
+	color: rgb(255, 212, 59);
+}
+
+.star-rating :hover ~ label {
+	color: rgb(250, 176, 5);
 }

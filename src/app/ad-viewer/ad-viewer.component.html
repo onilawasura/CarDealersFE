@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6">
             <ng-image-slider [images]="imageObject" #nav class="imageslider"></ng-image-slider>
         </div> 
     </div>
@@ -103,13 +103,20 @@
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="card-title">Rate Advetiser</label>
+                            <label class="sub-title">Rate Advetiser</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <br>
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="card-title">Google Map</label>
+                            <label class="sub-title">Google Map</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+                                <agm-marker *ngIf="locationChosen" [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                            </agm-map>
                         </div><!-- Col -->
                     </div><!-- Row -->
                 </div>
