@@ -4,6 +4,7 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    background-color: #F2F6F5;
 }
  .page-body-wrapper{
     min-height: calc(100vh - 70px);
@@ -14,18 +15,19 @@
  }
  .sidebar{
     min-height: calc(100vh - 70px);
-    background: #F2F6F5;
+    background: #6EC6CA;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     padding: 0;
-    width: 237px;
+    width: 18rem;
     z-index: 11;
  }
  .sidebar .nav{
     overflow: hidden;
     flex-wrap: nowrap;
     flex-direction: column;
-    margin-bottom: 60px;
+    background-color:#6EC6CA;
+    height: 100%;
  }
  .nav{
     display: flex;
@@ -38,9 +40,10 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
-    padding: 0.75rem 1.937rem 0.75rem 1rem;
-    color: #787878;
+    padding: 0.75rem 1.937rem 0 1rem;
+    color: #FFFFFF;
     transition-duration: 0.45s;
+    border-bottom: 1px solid;
  }
  a{
     text-decoration: none;
@@ -57,38 +60,42 @@
     margin-top: 0;
     list-style: none;
     padding: 0.25rem 0 0 3.07rem;
-    background: #F2F6F5;
+    background: #6EC6CA;
     padding-bottom: 12px;
  }
  .sidebar .nav {
     overflow: hidden;
     flex-wrap: nowrap;
     flex-direction: column;
-    margin-bottom: 60px;
 }
 .flex-column{
     flex-direction: column !important;
 }
-.sidebar .nav.sub-menu .nav-item {
+.sidebar .nav .sub-menu .nav-item {
     padding: 0;
+
 }
-.sidebar .nav.sub-menu .nav-item .nav-link{
-    color: #656565;
+.sidebar .nav .sub-menu .nav-item .nav-link{
+    color: #FFFFFF;
     padding: 0.7rem 1rem;
     position: relative;
     font-size: 0.875rem;
     line-height: 1;
     height: auto;
     border-top: 0;
+    border: 0;
 }
 .sidebar .nav .nav-item .nav-link i.fa-sort-down{
     display: inline-block;
     margin-left: auto;
     margin-right: 0;
-    color: #686868;
+    color: #FFFFFF;
+}
+
+.nav-link:hover{
+    background-color: rgb(7, 120, 124);
 }
 .main-panel{
-    background-color: #F2F6F5;
     position: relative;
     z-index: 2;
     float: right;
@@ -138,4 +145,21 @@
 }
 .footer{
     padding: 40px;
+}
+.btn{
+    color: #08979D;
+    margin: 5px;
+    padding: 10px;
+}
+.btn:hover{
+    background-color: #08979D;
+    color:#FFFFFF;
+}
+#sidebar.active #dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
 }
