@@ -262,7 +262,10 @@
           <h3 class="card-title">Google Map</h3>
         </div>
         <div class="card-body">
-
+          <!-- <agm-map [latitude]="lat" [longitude]="lng"></agm-map> -->
+          <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+            <agm-marker *ngIf="locationChosen" [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          </agm-map>
         </div>
         <div class="card-footer">
           <div class="row">
