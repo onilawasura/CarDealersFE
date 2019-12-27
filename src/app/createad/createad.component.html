@@ -9,7 +9,7 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="Category">Category</label>
-                <select class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.CategoryId" (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
+                <select class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.CategoryId" (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
                     <option value=""  selected="selected" >Please Select a Category</option> 
                     <option [selected]="category.Name=='Select name'" 
                     [disabled]="category.name=='Select name'"
@@ -21,7 +21,7 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="brand">Brand</label>
-                    <select id="brand" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.BrandId">
+                    <select id="brand" class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.BrandId">
                         <option value="1">Please Select a Brand</option>
                         <option value="2" *ngFor="let brand of brandData" value={{brand.id}}>{{brand.name}}</option>
                     </select>
@@ -174,7 +174,7 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" required>
+                    <input type="text" class="form-control" name="title" id="title" [(ngModel)] ="CreateadModel.AdTitle" required>
                 </div>
             </div><!-- Col -->
   
@@ -269,7 +269,7 @@
             <div class="col-sm-12">
               <div class="pull-right">
                 <button type="button" class="btn reset button">Reset</button>
-                <button type="button" class="btn submit button">Post Your Ad</button>
+                <button type="button" class="btn submit button" >Post Your Ad</button>
               </div>
             </div>
           </div>

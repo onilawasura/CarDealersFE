@@ -10,10 +10,20 @@
 .navbar-dark{
     color: #FFFFFF;
 }
+
 .btn{
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
     border-radius: 12px;
+    background-color: transparent;
+}
+
+.btnSearch{
+    border-radius: 0 12px 12px 0;
+}
+.searchbar{
+    border-radius: 12px 0 0 12px;
+    border: 1px solid #FFFFFF;
 }
 .btn:hover{
     border: 1px solid #FFFFFF;

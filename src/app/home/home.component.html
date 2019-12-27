@@ -1,3 +1,12 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+  });
+</script>
+
 <div class="container-fluid page-body-wrapper">
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
@@ -51,6 +60,8 @@
             <i class="fa fa-align-left"></i>
             <span>Toggle Sidebar</span>
           </button>
+        </div>
+        <div class="row">
           <div class="col-md-6" id="comp"  *ngFor="let ad of adDetails"> 
             <a href="/ad/{{ad.adId}}">
               <div class="card">
