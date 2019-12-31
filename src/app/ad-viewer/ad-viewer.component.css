@@ -1,12 +1,55 @@
+
 .title{
     font-size: 12px;
 }
 .card-header{
     padding: 10px;
+    background: #6EC6CA;
 }
-.card-title{
+.card-title {
     margin:0;
+    color:#110133;
 }
 .imageslider{
     padding-left: 250px;
+}
+agm-map {
+    height: 200px;
+  }
+
+.sub-title{
+    font-weight: bold;
+    color:#110133;
+}
+
+.title{
+    color: #110133;
+    font-size: 12px;
+}
+.text-right{ text-align: right; }
+
+.pb-cmnt-container {
+    font-family: Lato;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    width: 100%;
+    border: 1px solid #F2F2F2;
+    border-radius: 12px;
+}
+
+.btn{
+    border: 1px solid #6EC6CA;
+    color: #08979D;
+    border-radius: 12px;
+    margin: 5px;
+    padding: 8px 10px;
+}
+.btn:hover{
+    border: 1px solid #6EC6CA;
+    background-color: #6EC6CA;
+    color:#FFFFFF;
 }

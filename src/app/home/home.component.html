@@ -1,10 +1,19 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
+  });
+</script>
+
 <div class="container-fluid page-body-wrapper">
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item" style="padding-top: 70px;">
         <a class="nav-link collapsed" id="dropdown-toggle" data-toggle="collapse" href="#category" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-title">Category</span>
-          <i class="fa fa-sort-down"></i>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
         </a>
         <div class="collapse" id="category">
           <ul class="nav flex-column sub-menu">
@@ -17,7 +26,7 @@
       <li class="nav-item " style="padding-top: 70px;">
         <a class="nav-link collapsed" id="dropdown-toggle" data-toggle="collapse" href="#sort" aria-expanded="false" aria-controls="form-elements">
           <span class="menu-title">Sort</span>
-          <i class="fa fa-sort-down"></i>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
         </a>
         <div class="collapse" id="sort">
           <ul class="nav flex-column sub-menu">
@@ -30,7 +39,7 @@
       <li class="nav-item" style="padding-top: 70px;">
         <a class="nav-link collapsed" id="dropdown-toggle" data-toggle="collapse" href="#price" aria-expanded="false" aria-controls="form-elements">
           <span class="menu-title">Price</span>
-          <i class="fa fa-sort-down"></i>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
         </a>
         <div class="collapse" id="price">
           <ul class="nav flex-column sub-menu">

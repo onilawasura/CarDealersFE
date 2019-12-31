@@ -9,7 +9,7 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="Category">Category</label>
-                <select class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.CategoryId" (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
+                <select class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.CategoryId" (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
                     <option value=""  selected="selected" >Please Select a Category</option> 
                     <option [selected]="category.Name=='Select name'" 
                     [disabled]="category.name=='Select name'"
