@@ -47,11 +47,12 @@
     <div class="content">
       <div class="container-fluid panel">
         <div class="row">
+          <input type="text" [(ngModel)]="searchTerm">
           <button type="button" id="sidebarCollapse" class="btn">
             <i class="fa fa-align-left"></i>
             <span>Toggle Sidebar</span>
           </button>
-          <div class="col-md-6" id="comp"  *ngFor="let ad of adDetails"> 
+          <div class="col-md-6" id="comp"  *ngFor="let ad of filteredAdDetails"> 
             <a href="/ad/{{ad.adId}}">
               <div class="card">
                 <div class="cardcontent">

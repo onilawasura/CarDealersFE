@@ -1,6 +1,8 @@
 export class CreateadModel {
 
-    CategoryId: number;
+    // CategoryId: number;
+    // BrandId
+
 
 }
 

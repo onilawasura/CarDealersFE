@@ -19,6 +19,11 @@ export class CreateadComponent implements OnInit {
 
   categoryData: any;
   brandData: any;
+  modelData: any;
+  locationData:any;
+  advertisementId: any;
+
+  myFiles:string [] = [];
 
   CreateadModel: CreateadModel = new CreateadModel();
 
@@ -28,9 +33,14 @@ export class CreateadComponent implements OnInit {
   longitude: number =80.6451931695691;
   printError: any;
 
+
+  //temp
+  selecteFile: File = null;
+
   ngOnInit() {
     this.getCategories();
     this.getBrands();
+    this.getLocation();
   }
 
   getCategories(){
@@ -50,10 +60,69 @@ export class CreateadComponent implements OnInit {
     var xx = id;
   }
 
+  getModelsbyBrand(brandId){
+    this.createadService.getModels(brandId)
+      .subscribe((data : any) => {
+        this.modelData = data;
+      });
+  }
+
+  getLocation(){
+    this.createadService.getLocations()
+      .subscribe((data: any) => {
+        this.locationData = data;
+      });
+  }
+
   onChoseLocation(event){
     this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;;
     this.locationChosen = true;
+  }
+
+  saveadvetisment(adModel){
+    //this.CreateadModel.CategoryId = +adModel["CategoryId"];
+    //var xx = [...adModel];
+    adModel.CategoryId = +adModel["CategoryId"];
+    adModel.FkLocationId = +adModel["FkLocationId"];
+    adModel.FkBrandId = +adModel["FkBrandId"];
+    this.createadService.createAdvertisment(adModel)
+      .subscribe((data: any) => {
+        this.advertisementId = data["id"];
+        this.uploadFiles(this.advertisementId);
+
+      }, (error: any) =>{
+         console.log(error);
+      });
+  }
+
+  getFileDetails(e){
+    for (var i = 0; i < e.target.files.length; i++) { 
+      this.myFiles.push(e.target.files[i]);
+    }
+  }
+
+  uploadFiles(id){
+    const frmData = new FormData();
+
+    if(id == null){
+      id = 1;
+    }
+
+    frmData.append("adId", id);
+
+   for (var i = 0; i < this.myFiles.length; i++) { 
+    frmData.append("fileUpload", this.myFiles[i]);
+  }
+  
+
+    this.createadService.uploadFiles(frmData)
+      .subscribe((data: any) => {
+        alert(data["message"]);
+      }, error => {
+        console.log(error);
+      })
+
   }
 
 }

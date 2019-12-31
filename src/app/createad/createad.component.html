@@ -21,25 +21,19 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="brand">Brand</label>
-                    <select id="brand" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.BrandId">
-                        <option value="1">Please Select a Brand</option>
-                        <option value="2" *ngFor="let brand of brandData" value={{brand.id}}>{{brand.name}}</option>
+                    <select id="brand" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.FkBrandId" (ngModelChange)="getModelsbyBrand(CreateadModel.FkBrandId)" >
+                        <option value="">Please Select a Brand</option>
+                        <option *ngFor="let brand of brandData" value={{brand.id}}>{{brand.name}}</option>
                     </select>
                 </div>
             </div><!-- Col -->
 
             <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="brand">Model</label>
-                    <select id="brand" class="form-control browser-default custom-select">
-                        <option value="1">Civic</option>
-                        <option value="2">Corolla</option>
-                        <option value="3">CR-V</option>
-                        <option value="4">X-Trail</option>
-                        <option value="5">E-Class</option>
-                        <option value="6">A4</option>
-                        <option value="7">Swift</option>
-                        <option value="8">Alto</option>
+                    <label for="model">Model</label>
+                    <select id="model" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.ModelId">
+                      <option value="">Please Select a Model</option>
+                      <option *ngFor="let model of modelData" value={{model.id}}>{{model.name}}</option>
                     </select>
                 </div>
             </div>
@@ -74,7 +68,7 @@
                     <label for="uploadPhotos">Upload Photos</label>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile02">
+                            <input type="file" class="custom-file-input" id="inputGroupFile02" name="pic" accept="image/*"  id="file" multiple (change)="getFileDetails($event)">
                             <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
                         </div>
                         <div class="input-group-append">
@@ -169,55 +163,37 @@
         <h3 class="card-title">Advertistment Details</h3>
       </div>
       <div class="card-body">
-        <form>
+        <!-- <form> -->
           <div class="row">
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" required>
+                    <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="CreateadModel.AdTitle">
                 </div>
             </div><!-- Col -->
   
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="Loction">Location</label>
-                <select class="form-control custom-select browser-default">
-                    <option value="1">Colombo</option>
-                    <option value="2">Kaluthara</option>
-                    <option value="3">Gampaha</option>
-                    <option value="4">Galle</option>
-                    <option value="5">Matara</option>
-                    <option value="6">Hambanthota</option>
-                    <option value="7">Kandy</option>
-                    <option value="8">NuwaraEliya</option>
-                    <option value="9">Matale</option>
-                    <option value="10">Jaffna</option>
-                    <option value="11">Anuradhapura</option>
-                    <option value="12">Polonnaruwa</option>
-                    <option value="13">Trincomalee</option>
-                    <option value="14">Ampara</option>
-                    <option value="15">Mulathuv</option>
-                    <option value="16">Kegalle</option>
-                    <option value="17">Kurunegala</option>
-                    <option value="18">Puttalam</option>
-                    <option value="20">Mannar</option>
-                    <option value="21">Badulla</option>
-                    <option value="22">Mahiyanganaya</option>
-                    <option value="23">Vavunia</option>
-                    <option value="24">Rathnapura</option>
-                    <option value="25">Kilinochchi</option>
-                </select>
+                <!-- <select class="form-control custom-select browser-default" [(ngModel)]="CreateadModel.LocationId">
+                    <option value="">Please Select a location</option>
+                    <option *ngFor="let location of locationData" value="{{location.Id}}" >{{location.name}}</option>
+                </select> -->
+                <select id="Location" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.FkLocationId" >
+                  <option value="">Please Select a Location</option>
+                  <option *ngFor="let location of locationData" value={{location.id}}>{{location.name}}</option>
+              </select>
               </div>
             </div><!-- Col -->
 
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="desc">Description</label>
-                    <input type="text" class="form-control" name="desc" id="desc" required>
+                    <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="CreateadModel.FkUserId" required>
                 </div>
               </div><!-- Col -->
           </div><!-- Row -->
-        </form>
+        <!-- </form> -->
       </div>
     </div>
 
@@ -233,7 +209,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name" id="name" required>
+                      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="CreateadModel.Name" required>
                     </div>
                   </div><!-- Col -->
         
@@ -272,7 +248,7 @@
             <div class="col-sm-12">
               <div class="pull-right">
                 <button type="button" class="btn reset button">Reset</button>
-                <button type="button" class="btn submit button">Post Your Ad</button>
+                <button type="button" class="btn submit button" (click)="saveadvetisment(CreateadModel)">Post Your Ad</button>
               </div>
             </div>
           </div>
