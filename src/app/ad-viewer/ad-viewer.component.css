@@ -53,3 +53,16 @@ agm-map {
     background-color: #6EC6CA;
     color:#FFFFFF;
 }
+
+.btnreport{
+    border: 1px solid #6EC6CA;
+    color: #08979D;
+    border-radius: 12px;
+    margin: 0;
+    padding: 8px 10px;
+}
+.btnreport:hover{
+    border: 1px solid #3D0E1E;
+    background-color: #3D0E1E;
+    color:#FFFFFF;
+}

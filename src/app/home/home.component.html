@@ -1,12 +1,3 @@
-<script type="text/javascript">
-  $(document).ready(function () {
-
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
-  });
-</script>
-
 <div class="container-fluid page-body-wrapper">
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
@@ -56,11 +47,11 @@
     <div class="content">
       <div class="container-fluid panel">
         <div class="row">
-          <input type="text" [(ngModel)]="searchTerm">
-          <button type="button" id="sidebarCollapse" class="btn">
-            <i class="fa fa-align-left"></i>
-            <span>Toggle Sidebar</span>
-          </button>
+          <div class="col-md-12">
+            <input class="form-control searchbar" placeholder="Search" aria-label="Search" type="text" [(ngModel)]="searchTerm">
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-6" id="comp"  *ngFor="let ad of filteredAdDetails"> 
             <a href="/ad/{{ad.adId}}">
               <div class="card">
