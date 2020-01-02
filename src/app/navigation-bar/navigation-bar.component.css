@@ -11,15 +11,66 @@
     color: #FFFFFF;
 }
 
-.btn{
+.btnsubmit{
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
     border-radius: 10px;
-    background-color: transparent;
+    background-color:transparent; 
 }
 
-.btn:hover{
+.btnsubmit:hover{
     border: 1px solid #FFFFFF;
     background-color: #FFFFFF;
     color:#08979D;
+}
+
+.btndrop{
+    border: 0;
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+.btndrop:hover{
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.btndrop:active{
+    border: 0;
+}
+.dropdown{
+    width: 18%;
+}
+.dropdown-menu{
+    padding: 10px;
+    padding-bottom: 0px;
+    width: 100%;
+}
+
+.button{
+    border: 1px solid #6EC6CA;
+    color: #FFFFFF;
+    border-radius: 10px;
+    background-color: #6EC6CA;
+}
+.button:hover{
+    border: 1px solid #6EC6CA;
+    background-color: #FFFFFF;
+    color:#6EC6CA;
+}
+
+.btnchange{
+    border: 1px solid #3D0E1E;
+    color: #FFFFFF;
+    border-radius: 10px;
+    background-color: #3D0E1E;
+}
+.btnchange:hover{
+    border: 1px solid #3D0E1E;
+    background-color: #FFFFFF;
+    color:#3D0E1E;
+}
+.fa-user{
+    color: #6EC6CA;
 }
