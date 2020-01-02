@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
   getAllAdvertisements(){
     this.homeService.getAdvertisements()
       .subscribe((data: any) => {
-        console.log(data);
+       // console.log(data);
         var xx =data;
         this.adDetails = data;
         this.filteredAdDetails = this.adDetails;

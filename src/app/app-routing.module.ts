@@ -7,6 +7,8 @@ import {CreateadComponent} from './createad/createad.component'
 import { AdViewerComponent } from './ad-viewer/ad-viewer.component';
 import { TestComponentComponent } from './test-component/test-component.component';
 import { AuthGuard } from './auth/auth.guard';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'postad', component:CreateadComponent, canActivate:[AuthGuard]},
   {path: 'ad/:id', component:AdViewerComponent},
-  {path: 'test', component: TestComponentComponent}
+  {path: 'test', component: TestComponentComponent},
+  {path: 'forbidden', component: ForbiddenComponent},
+  {path: 'adminpanel', component: AdminPanelComponent, canActivate:[AuthGuard], data: {permittedRoles:['Admin']}}
 ];
 
 @NgModule({

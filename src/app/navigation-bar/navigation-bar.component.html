@@ -9,8 +9,11 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="home">All Ads</a>
         </li>
-        <li  *ngIf="isUserLogged" class="nav-item">
+        <li  *ngIf="isUserLogged && userDetails.role == 'User'" class="nav-item">
           <a class="nav-link" routerLink="postad">Post Your Add</a>
+        </li>
+        <li  *ngIf="isUserLogged && userDetails.role == 'Admin'" class="nav-item">
+          <a class="nav-link" routerLink="adminpanel">Admin panle</a>
         </li>
       </ul>
       <div  *ngIf="isUserLogged" class="dropdown">
@@ -27,8 +30,10 @@
                 </p>
               </div>
               <div class="col-md-8">
-                <p class="text-left">{{userDetails.fullName}}</p>
-                <p class="text-left small">{{userDetails.email}}</p>
+                <p class="text-left"  >{{userDetails.fullName}}</p>
+                <p class="text-left small" >{{userDetails.email}}</p>
+                <p class="text-left small" >{{userDetails.userName}}</p>
+                <p class="text-left small" >{{userDetails.role}}</p>
                 <p class="text-left">
                   <button class="btn btn-block button" (click)="onLogout()">Logout</button>
                 </p>

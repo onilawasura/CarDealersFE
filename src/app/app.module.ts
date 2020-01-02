@@ -27,6 +27,8 @@ import { CreateAdService } from './createad/create-ad.service';
 import { AgmCoreModule } from '@agm/core';
 import { TestComponentComponent } from './test-component/test-component.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 
 
@@ -40,7 +42,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     NavigationBarComponent,
     CreateadComponent,
     AdViewerComponent,
-    TestComponentComponent
+    TestComponentComponent,
+    AdminPanelComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,
