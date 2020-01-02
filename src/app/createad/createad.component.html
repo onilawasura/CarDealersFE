@@ -77,43 +77,56 @@
                     </div>
                 </div>
             </div><!-- Col -->
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                  <label for="bodyType">Body Type</label>
+                  <input type="text" class="form-control" name="bodyType" id="bodyType"  required [(ngModel)] = "CreateadModel.BodyType">
+              </div>
+            </div><!-- Col -->
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                  <label for="capacity">Engine Capacity</label>
+                  <input type="text" class="form-control" name="capacity" id="capacity" required [(ngModel)] = "CreateadModel.Capacity">
+              </div>
+            </div><!-- Col -->
+           </div><!-- Row -->
+
+          <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="transmission">Transmission</label>
+                    <div class="form-check" style="padding-top: 5px;">
+                      <div class="form-check form-check-inline">
+                        <input class="option-input radio" type="radio" name="transmissionOptions" id="type1" value="1" [(ngModel)]= "CreateadModel.Transmission">
+                        <label class="form-check-label" for="type1">Automatic</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="option-input radio" type="radio" name="transmissionOptions" id="type2" value="2" [(ngModel)]= "CreateadModel.Transmission">
+                        <label class="form-check-label" for="type2">Manual</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="option-input radio" type="radio" name="transmissionOptions" id="type3" value="3" [(ngModel)]= "CreateadModel.Transmission">
+                        <label class="form-check-label" for="type3">TipTronic</label>
+                      </div>
+                    </div>
+                </div>
+            </div><!-- Col -->
   
             <div class="col-sm-4">
                 <div class="form-group">
                     <label for="name-l">Conditions</label>
                     <div class="form-check" style="padding-top: 5px;">
                         <div class="form-check form-check-inline">
-                            <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio1" value="false" [(ngModel)]="CreateadModel.Condition">
+                            <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio1" value="false" [(ngModel)]="CreateadModel.Conditio">
                             <label class="form-check-label" for="inlineRadio1">Brand New</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio2" value="true" [(ngModel)]="CreateadModel.Condition">
+                            <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio2" value="true" [(ngModel)]="CreateadModel.Conditio">
                             <label class="form-check-label" for="inlineRadio2">Used</label>
                         </div>
                     </div>
-                </div>
-            </div><!-- Col -->
-
-            <div class="col-sm-4">
-                <div class="form-group" style="padding-top: 25px;">
-                    <input type="checkbox" class="option-input checkbox" id="nego" required value="false" [(ngModel)] = "CreateadModel.Negotiable">
-                    <label for="nego" class="form-check-label">&nbsp;Negotiable</label>
-                </div>
-            </div><!-- Col -->
-          </div><!-- Row -->
-
-          <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="transmission">Transmission</label>
-                    <input type="text" class="form-control" name="transmission" id="transmission" required [(ngModel)]= "CreateadModel.Transmission">   
-                </div>
-            </div><!-- Col -->
-  
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="bodyType">Body Type</label>
-                    <input type="text" class="form-control" name="bodyType" id="bodyType"  required [(ngModel)] = "CreateadModel.BodyType">
                 </div>
             </div><!-- Col -->
 
@@ -122,20 +135,20 @@
                   <label for="fuel">Fuel Type</label>
                   <div class="form-check" style="padding-top: 5px;">
                     <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="inlineRadioOptions" id="fuel1" value="1" [(ngModel)]="CreateadModel.FuelType">
+                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel1" value="1" [(ngModel)]="CreateadModel.Fuel">
                       <label class="form-check-label" for="fuel1">Petrol</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="inlineRadioOptions" id="fuel2" value="2" [(ngModel)]="CreateadModel.FuelType">
+                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel2" value="2" [(ngModel)]="CreateadModel.Fuel">
                       <label class="form-check-label" for="fuel2">Diesel</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="inlineRadioOptions" id="fuel3" value="3" [(ngModel)]="CreateadModel.FuelType">
-                      <label class="form-check-label" for="fuel3">Hybrid</label>
+                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel3" value="3" [(ngModel)]="CreateadModel.Fuel">
+                      <label class="form-check-label" for="fuel3"> Hybrid</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="inlineRadioOptions" id="fuel4" value="4" [(ngModel)]="CreateadModel.FuelType">
-                      <label class="form-check-label" for="fuel4">Electic</label>
+                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel4" value="4" [(ngModel)]="CreateadModel.Fuel">
+                      <label class="form-check-label" for="fuel4"> Electric</label>
                     </div>
                 </div>
               </div>
@@ -143,14 +156,7 @@
           </div><!-- Row -->
 
           <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="capacity">Engine Capacity</label>
-                    <input type="text" class="form-control" name="capacity" id="capacity" required [(ngModel)] = "CreateadModel.Capacity">
-                </div>
-            </div><!-- Col -->
-  
-            <div class="col-sm-4">
+              <div class="col-sm-4">
                 <div class="form-group">
                     <label for="milage">Milage</label>
                     <input type="text" class="form-control" name="milage" id="milage" required [(ngModel)]="CreateadModel.Millage">
@@ -161,6 +167,13 @@
                 <div class="form-group">
                   <label for="price">Price</label>
                   <input type="text" class="form-control" name="price" id="price" required [(ngModel)]="CreateadModel.Price">
+                </div>
+              </div><!-- Col -->
+
+              <div class="col-sm-4">
+                <div class="form-group" style="padding-top: 25px;">
+                    <input type="checkbox" class="option-input checkbox" id="nego" required value="false" [(ngModel)] = "CreateadModel.Negotiable">
+                    <label for="nego" class="form-check-label">&nbsp;Negotiable</label>
                 </div>
               </div><!-- Col -->
           </div><!-- Row -->
@@ -221,21 +234,21 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="CreateadModel.PersonName" required>
+                      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="CreateadModel.name" required>
                     </div>
                   </div><!-- Col -->
         
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" name="email" id="email" required [(ngModel)]="CreateadModel.PersonEmail">
+                      <input type="email" class="form-control" name="email" id="email" required [(ngModel)]="CreateadModel.email">
                     </div>
                   </div><!-- Col -->
         
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label for="contactNo">Contact No</label>
-                      <input type="text" class="form-control" name="contactNo" id="contactNo" required [(ngModel)]="CreateadModel.PersonContactno">  
+                      <input type="text" class="form-control" name="contactNo" id="contactNo" required [(ngModel)]="CreateadModel.contactno">  
                     </div>
                   </div><!-- Col -->
                 </div><!-- Row -->
