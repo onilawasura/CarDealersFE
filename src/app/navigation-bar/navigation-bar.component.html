@@ -9,11 +9,11 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="home">All Ads</a>
         </li>
-        <li class="nav-item">
+        <li  *ngIf="isUserLogged" class="nav-item">
           <a class="nav-link" routerLink="postad">Post Your Add</a>
         </li>
       </ul>
-      <div class="dropdown">
+      <div  *ngIf="isUserLogged" class="dropdown">
         <a href="#" class="dropdown-toggle btndrop" data-toggle="dropdown">
           <i class="fa fa-user fa-2x" aria-hidden="true" style="color: #FFFFFF;"></i>&nbsp;&nbsp;
           <strong>Login User</strong>&nbsp;
@@ -27,10 +27,10 @@
                 </p>
               </div>
               <div class="col-md-8">
-                <p class="text-left">Name</p>
-                <p class="text-left small">Email Address</p>
+                <p class="text-left">{{userDetails.fullName}}</p>
+                <p class="text-left small">{{userDetails.email}}</p>
                 <p class="text-left">
-                  <a href="#" class="btn btn-block button">Logout</a>
+                  <button class="btn btn-block button" (click)="onLogout()">Logout</button>
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@
         </div>
       </div>
         <div>&nbsp;</div>
-      <button class="btn my-2 my-sm-0 btnsubmit" type="submit"  routerLink="/login">Login</button>
+      <button  *ngIf="!isUserLogged" class="btn my-2 my-sm-0 btnsubmit" type="submit"  routerLink="/login">Login</button>
     </div>
 </nav> 
 
