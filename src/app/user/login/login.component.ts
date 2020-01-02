@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       (res: any) => {
         //var xx = JSON.parse(res);
         localStorage.setItem('token', res.token);
+        this.service.LoggedIn();
         this.router.navigateByUrl('/home');
       },
       err => {

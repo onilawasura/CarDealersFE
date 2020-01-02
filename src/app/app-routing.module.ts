@@ -6,13 +6,14 @@ import {HomeComponent} from './home/home.component';
 import {CreateadComponent} from './createad/createad.component'
 import { AdViewerComponent } from './ad-viewer/ad-viewer.component';
 import { TestComponentComponent } from './test-component/test-component.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent },
   {path: 'signup', component:SignupComponent},
   {path: 'home', component:HomeComponent},
-  {path: 'postad', component:CreateadComponent},
+  {path: 'postad', component:CreateadComponent, canActivate:[AuthGuard]},
   {path: 'ad/:id', component:AdViewerComponent},
   {path: 'test', component: TestComponentComponent}
 ];

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -7,6 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
+
+  $isLoggedIn = new EventEmitter();
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
   readonly BaseURI = 'https://localhost:44393/api';
@@ -49,15 +51,19 @@ login(formData) {
   return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
 }
 
-getUserProfile() {
-  //for lots of enterprises application have to appent the jwt token to request header as below
-  //to avoid repeating codes we can use http intercepto classes
-  // var tokenHeader = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
-  // return this.http.get(this.BaseURI + '/UserProfile', { headers : tokenHeader});
-
-  //for this api call jwt token is needed and it provided with auth.interceptor.ts class
-  return this.http.get(this.BaseURI + '/UserProfile');
+LoggedIn(){
+  this.$isLoggedIn.emit(true);
 }
+
+// getUserProfile() {
+//   //for lots of enterprises application have to appent the jwt token to request header as below
+//   //to avoid repeating codes we can use http intercepto classes
+//   // var tokenHeader = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
+//   // return this.http.get(this.BaseURI + '/UserProfile', { headers : tokenHeader});
+
+//   //for this api call jwt token is needed and it provided with auth.interceptor.ts class
+//   return this.http.get(this.BaseURI + '/UserProfile');
+// }
 
 roleMatch(allowedRoles): boolean{
   var isMatch = false;
@@ -71,6 +77,16 @@ roleMatch(allowedRoles): boolean{
   });
 
   return isMatch;
+}
+
+getUserProfile() {
+  //for lots of enterprises application have to appent the jwt token to request header as below
+  //to avoid repeating codes we can use http intercepto classes
+  //  var tokenHeader = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
+  //  return this.http.get(this.BaseURI + '/UserProfile/GetUserProfile', { headers : tokenHeader});
+
+  //for this api call jwt token is needed and it provided with auth.interceptor.ts class
+  return this.http.get(this.BaseURI + '/UserProfile/GetUserProfile');
 }
 
 }

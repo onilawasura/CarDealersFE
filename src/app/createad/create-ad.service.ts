@@ -26,7 +26,7 @@ export class CreateAdService {
 
   getBrands(){
     this.getBrandsUrl  = this.BaseURI + '/masterdata/GetAllBrands';
-    //var requestHeader = new HttpHeaders({'No-Auth':'True'});
+    //va  r requestHeader = new HttpHeaders({'No-Auth':'True'});
     return this.http.get(this.getBrandsUrl);
   }
   

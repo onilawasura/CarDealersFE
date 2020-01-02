@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { HomeServiceService } from './Shared/home-service.service';
+import { UserService } from '../user/Sahred/user.service';
 
 
 @Component({
@@ -11,10 +12,11 @@ import { HomeServiceService } from './Shared/home-service.service';
 export class HomeComponent implements OnInit {
 
   img: string  = "assets/Bugatti.jpg";
-  constructor(private toastr: ToastrService, private homeService: HomeServiceService) { }
+  constructor(private toastr: ToastrService, private homeService: HomeServiceService, private userService: UserService) { }
   adDetails: any;
   filteredAdDetails: any;
   private _searchTerm: string;
+  userDetails : any;
 
   get searchTerm(): string{
     return this._searchTerm;
@@ -41,6 +43,17 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    // this.toastr.success('Hello world!', 'Toastr fun!');
    this.getAllAdvertisements();
+
+   this.userService.getUserProfile().subscribe(
+    res => {
+      this.userDetails = res;
+    },
+    err => {
+      console.log(err);
+    },
+  );
+
+
    
   }
 

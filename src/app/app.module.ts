@@ -26,6 +26,7 @@ import { CreateAdService } from './createad/create-ad.service';
 
 import { AgmCoreModule } from '@agm/core';
 import { TestComponentComponent } from './test-component/test-component.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 
 
@@ -54,7 +55,11 @@ import { TestComponentComponent } from './test-component/test-component.componen
       apiKey: 'AIzaSyBsfNaHgeIjbCfsxJoLxPyYXk8LZhcoxuw'
     })
   ],
-  providers: [HomeServiceService, AdViewerService, CreateAdService],
+  providers: [HomeServiceService, AdViewerService, CreateAdService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
