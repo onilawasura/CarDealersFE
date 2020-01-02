@@ -86,6 +86,10 @@ export class CreateadComponent implements OnInit {
     adModel.CategoryId = +adModel["CategoryId"];
     adModel.FkLocationId = +adModel["FkLocationId"];
     adModel.FkBrandId = +adModel["FkBrandId"];
+    adModel.Price = +adModel["Price"];
+    adModel.ModelYear = +adModel["ModelYear"];
+    adModel.Condition = (adModel["Conditio"] === "true");
+    adModel.FuelType = +(adModel["Fuel"])
     this.createadService.createAdvertisment(adModel)
       .subscribe((data: any) => {
         this.advertisementId = data["id"];
