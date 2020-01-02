@@ -35,10 +35,10 @@ export class CreateAdService {
     return this.http.get(this.getModelsUrl);
   }
 
-    getLocations(){
-      this.getLocationsUrl = this.BaseURI + '/masterdata/GetAllLocations';
-      return this.http.get(this.getLocationsUrl);
-    }
+  getLocations(){
+    this.getLocationsUrl = this.BaseURI + '/masterdata/GetAllLocations';
+    return this.http.get(this.getLocationsUrl);
+  }
   
 
   createAdvertisment(createadModel){

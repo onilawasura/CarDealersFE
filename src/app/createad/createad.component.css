@@ -39,4 +39,44 @@
 
 agm-map {
     height: 300px;
+}
+
+.option-input.radio {
+    border-radius: 50%;
+}
+.option-input.radio::after {
+    border-radius: 50%;
+}
+.option-input {
+    appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    background: #cbd1d8;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    z-index: 1000;
+}
+
+.option-input:hover {
+    background: #9faab7;
+}
+.option-input:checked {
+    background: #110133;
+  }
+  .option-input:checked::before {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    display: inline-block;
+    line-height: 50px;
+  }
+  .option-input:checked::after {
+    background: #110133;
+    display: block;
+    position: relative;
+    z-index: 100;
   }

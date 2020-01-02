@@ -11,56 +11,66 @@
     color: #FFFFFF;
 }
 
-.btn{
+.btnsubmit{
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
     border-radius: 10px;
-    background-color: transparent;
+    background-color:transparent; 
 }
 
-.btn:hover{
+.btnsubmit:hover{
     border: 1px solid #FFFFFF;
     background-color: #FFFFFF;
     color:#08979D;
 }
 
-
-/* @charset "utf-8";
-body {
-  font-family: 'Open Sans', 'sans-serif';
+.btndrop{
+    border: 0;
+    color: #FFFFFF;
+    background-color: transparent;
 }
-.navbar-default{background:#3285D1;border-color: #3285D1;}
-.navbar-default .navbar-nav > li > a{color:#FFF;}
-.nav > li > a{margin:15px; font-size: 17px; color:#FFF;}
-.nav .open > a, .nav .open > a:hover, 
-.nav .open > a:focus,
-.nav > li > a:hover, .nav > li > a:focus{background-color:transparent !important;}
 
-.navbar-brand{    
-    margin: 15px !important;
-    padding: 13px !important;
-    color: #fff !important;
-    font-size: 2em !important;
-    font-weight: bold !Important;
-    }
-    
-.navbar-toggle{margin-top:20px !important;}
-.dropdown-menu{background:#fff !important;}
-.navbar-login
-{
-    width: 350px;
+.btndrop:hover{
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.btndrop:active{
+    border: 0;
+}
+.dropdown{
+    width: 18%;
+}
+.dropdown-menu{
     padding: 10px;
     padding-bottom: 0px;
+    width: 100%;
 }
 
-.navbar-login-session
-{
-    padding: 10px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+.button{
+    border: 1px solid #6EC6CA;
+    color: #FFFFFF;
+    border-radius: 10px;
+    background-color: #6EC6CA;
+}
+.button:hover{
+    border: 1px solid #6EC6CA;
+    background-color: #FFFFFF;
+    color:#6EC6CA;
 }
 
-.icon-size
-{
-    font-size: 87px;
-} */
+.btnchange{
+    border: 1px solid #3D0E1E;
+    color: #FFFFFF;
+    border-radius: 10px;
+    background-color: #3D0E1E;
+}
+.btnchange:hover{
+    border: 1px solid #3D0E1E;
+    background-color: #FFFFFF;
+    color:#3D0E1E;
+}
+.fa-user{
+    color: #6EC6CA;
+}
