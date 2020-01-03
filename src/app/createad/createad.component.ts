@@ -3,6 +3,7 @@ import { CreateAdService } from './create-ad.service';
 import { CreateadModel } from './createad-model';
 
 import { AgmCoreModule } from '@agm/core';
+import { UserService } from '../user/Sahred/user.service';
 
 @Component({
   selector: 'app-createad',
@@ -15,7 +16,7 @@ export class CreateadComponent implements OnInit {
   // lng: number = 80.6451931695691;
 
 
-  constructor(private createadService: CreateAdService) { }
+  constructor(private createadService: CreateAdService, private userService: UserService) { }
 
   categoryData: any;
   brandData: any;
@@ -33,6 +34,14 @@ export class CreateadComponent implements OnInit {
   longitude: number =80.6451931695691;
   printError: any;
 
+  userDetails = {
+    fullName: "",
+    email: "",
+    userName: "",
+    role: "",
+    userId: ""
+  };
+
 
   //temp
   selecteFile: File = null;
@@ -41,6 +50,20 @@ export class CreateadComponent implements OnInit {
     this.getCategories();
     this.getBrands();
     this.getLocation();
+
+    this.userService.getUserProfile().subscribe(
+      res => {
+        this.userDetails.email = res["email"];
+        this.userDetails.fullName = res["fullName"];
+        this.userDetails.userName = res["userName"];
+        this.userDetails.role = res["role"];
+        this.userDetails.userId = res["id"]
+      },
+      err => {
+        console.log(err);
+      },
+      );
+
   }
 
   getCategories(){
@@ -86,10 +109,14 @@ export class CreateadComponent implements OnInit {
     adModel.CategoryId = +adModel["CategoryId"];
     adModel.FkLocationId = +adModel["FkLocationId"];
     adModel.FkBrandId = +adModel["FkBrandId"];
+    adModel.ModelId = +adModel["ModelId"];
     adModel.Price = +adModel["Price"];
     adModel.ModelYear = +adModel["ModelYear"];
     adModel.Condition = (adModel["Conditio"] === "true");
     adModel.FuelType = +(adModel["Fuel"])
+    adModel.Longitude = this.longitude;
+    adModel.Latitude = this.latitude;
+    adModel.FkUserId = this.userDetails.userId;
     this.createadService.createAdvertisment(adModel)
       .subscribe((data: any) => {
         this.advertisementId = data["id"];

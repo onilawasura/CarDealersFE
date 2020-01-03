@@ -49,7 +49,8 @@
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.condition}}</label>
+                            <label class="title" *ngIf="advertisment.condition">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used</label>
+                            <label class="title" *ngIf="!advertisment.condition">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Brandnew</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
@@ -108,7 +109,7 @@
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.fkUserId}}</label>
+                            <label class="title">Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.description}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
@@ -135,7 +136,7 @@
                     <div class="row">          
                         <div class="col-sm-12">
                             <agm-map [latitude]="advertisment.latitude" [longitude]="advertisment.longitude" (mapClick)="onChoseLocation($event)">
-                                <agm-marker *ngIf="locationChosen" [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                                <agm-marker [latitude]="advertisment.latitude" [longitude]="advertisment.longitude"></agm-marker>
                             </agm-map>
                         </div><!-- Col -->
                     </div><!-- Row -->
@@ -153,10 +154,14 @@
                             <div class="col-sm-12 col-md-offset-3">
                                 <div class="panel panel-info">
                                     <div class="panel-body">
-                                        <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                                        <textarea *ngIf="isUserLogged && userDetails.role == 'User'" placeholder="Write your comment here!" [(ngModel)]="userComment.Name" class="pb-cmnt-textarea"></textarea>
                                         <form class="form-inline">
-                                            <button class="btn" type="button">Post Comment</button>
+                                            <button *ngIf="isUserLogged && userDetails.role == 'User'" class="btn" type="button" (click)="addComments()">Post Comment</button>
                                         </form>
+
+                                        <div *ngFor="let comment of lstComments">
+                                            {{comment.userFullName}} Saya {{comment.comment}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
