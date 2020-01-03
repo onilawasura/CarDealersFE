@@ -29,52 +29,62 @@
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Model: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.ModelType}}</label>
+                            <label class="title">Model: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.modelType}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Edition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Edition}}</label>
+                            <label class="title">Grade: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.grade}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Model Year: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Grade}}</label>
+                            <label class="title">Model Number: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.edition}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Condition}}</label>
+                            <label class="title">Model Year: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.modelYear}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.FuelType}}</label>
+                            <label class="title">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.condition}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Transmission}}</label>
+                            <label class="title" *ngIf="advertisment.fuelType == 1">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Petrol</label>
+                            <label class="title" *ngIf="advertisment.fuelType == 2">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diesel</label>
+                            <label class="title" *ngIf="advertisment.fuelType == 3">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hybrid</label>
+                            <label class="title" *ngIf="advertisment.fuelType == 4">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Electric</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Body Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.BodyType}}</label>
+                            <label class="title" *ngIf="advertisment.transmission == '1'">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Automatic</label>
+                            <label class="title" *ngIf="advertisment.transmission == '2'">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manual</label>
+                            <label class="title" *ngIf="advertisment.transmission == '3'">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TipTronic</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Milage: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Milage}}</label>
+                            <label class="title">Body Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.bodyType}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Engine Capacity: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Capacity}}</label>
+                            <label class="title">Milage: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.milage}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Location: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Destination}}</label>
+                            <label class="title">Engine Capacity: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.capacity}}</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="row">          
+                        <div class="col-sm-12">
+                            <label class="title">Location: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.destination}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
@@ -93,22 +103,22 @@
                 <div class="card-body">
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Price}}</label>
+                            <label class="title">Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.price}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.FkUserId}}</label>
+                            <label class="title">Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.fkUserId}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Name}}</label>
+                            <label class="title">Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.name}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <label class="title">Contact Number: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.Contactno}}</label>
+                            <label class="title">Contact Number: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.contactno}}</label>
                         </div><!-- Col -->
                     </div><!-- Row -->
                     <div class="row">          
@@ -124,7 +134,7 @@
                     </div><!-- Row -->
                     <div class="row">          
                         <div class="col-sm-12">
-                            <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+                            <agm-map [latitude]="advertisment.latitude" [longitude]="advertisment.longitude" (mapClick)="onChoseLocation($event)">
                                 <agm-marker *ngIf="locationChosen" [latitude]="latitude" [longitude]="longitude"></agm-marker>
                             </agm-map>
                         </div><!-- Col -->
