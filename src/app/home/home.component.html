@@ -9,11 +9,16 @@
         <div id="location">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> 
-              <a class="nav-link" href="#"> 
-                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Colombo
+              <a class="nav-link"  routerLink="." (click)="getAdvertisementFiltered(null, null)"> 
+                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Select All
               </a>
             </li>
-            <li class="nav-item"> 
+            <li class="nav-item" *ngFor="let location of locationData"> 
+              <a class="nav-link"  routerLink="." (click)="getAdvertisementFiltered(location.id, null)"> 
+                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;{{location.name}}
+              </a>
+            </li>
+            <!-- <li class="nav-item"> 
               <a class="nav-link" href="#"> 
                 <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Gampaha
               </a>
@@ -22,7 +27,7 @@
               <a class="nav-link" href="#"> 
                 <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Kaluthara
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </li>
@@ -32,9 +37,18 @@
         </a>
         <div  id="category">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#"> <i class="fa fa-car" aria-hidden="true"></i> &nbsp;&nbsp;Car</a></li>
-            <li class="nav-item"> <a class="nav-link" href="#"> <i class="fa fa-car" aria-hidden="true"></i> &nbsp;&nbsp;Van</a></li>
-            <li class="nav-item"> <a class="nav-link" href="#"> <i class="fa fa-truck" aria-hidden="true"></i> &nbsp;&nbsp;Lorry</a></li>
+            <li class="nav-item"> 
+              <a class="nav-link"   routerLink="." (click)="getAdvertisementFiltered(null, null)"> 
+                <i class="fa fa-car" aria-hidden="true"></i> 
+                &nbsp;&nbsp;Select All
+            </a>
+            </li>
+            <li class="nav-item" *ngFor="let cat of categoryData"> 
+              <a class="nav-link"   routerLink="." (click)="getAdvertisementFiltered(null, cat.id)"> 
+                <i class="fa fa-car" aria-hidden="true"></i> 
+                &nbsp;&nbsp;{{cat.name}}
+            </a>
+            </li>
           </ul>
         </div>
       </li>
@@ -45,17 +59,17 @@
         <div id="price">
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
-              <span class ="spantext" id="inputGroup-sizing-sm">Max Price</span>
+              <span class ="spantext" id="inputGroup-sizing-sm">Min Price</span>
             </div>
-            <input type="text" class="form-control price" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" class="form-control price" aria-label="Sizing example input" [(ngModel)]="minPrice" aria-describedby="inputGroup-sizing-sm">
           </div>
           <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class ="spantext" id="inputGroup-sizing-sm">Min Price</span>
+                <span class ="spantext" id="inputGroup-sizing-sm">Max Price</span>
               </div>
-              <input type="text" class="form-control price" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control price" aria-label="Sizing example input" [(ngModel)]="maxPrice" aria-describedby="inputGroup-sizing-sm">
           </div>
-          <button type="button" class="btn btn-sm btngo">Go</button>
+          <button type="button" class="btn btn-sm btngo" (click)="getAdvertisementFiltered(null, null, minPrice, maxPrice)">Go</button>
         </div>
       </li>
     </ul>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { HomeServiceService } from './Shared/home-service.service';
 import { UserService } from '../user/Sahred/user.service';
+import { CreateAdService } from '../createad/create-ad.service';
 
 
 @Component({
@@ -12,11 +13,21 @@ import { UserService } from '../user/Sahred/user.service';
 export class HomeComponent implements OnInit {
 
   img: string  = "assets/Bugatti.jpg";
-  constructor(private toastr: ToastrService, private homeService: HomeServiceService, private userService: UserService) { }
+  constructor(private toastr: ToastrService, private homeService: HomeServiceService, private userService: UserService, private createAdService: CreateAdService) { }
   adDetails: any;
   filteredAdDetails: any;
   private _searchTerm: string;
   userDetails : any;
+
+  locationData:any;
+  categoryData: any;
+
+  filteredDataObj = {
+    locationId : null,
+    categoryId: null,
+    maxPrice: null,
+    minPrice: null
+  }
 
   get searchTerm(): string{
     return this._searchTerm;
@@ -42,7 +53,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
    // this.toastr.success('Hello world!', 'Toastr fun!');
-   this.getAllAdvertisements();
+   //this.getAllAdvertisements();
+   this.getAdvertisementFiltered(null, null, null, null);
+
+   this.getLocation();
+   this.getCategories();
 
    this.userService.getUserProfile().subscribe(
     res => {
@@ -51,10 +66,47 @@ export class HomeComponent implements OnInit {
     err => {
       console.log(err);
     },
-  );
+  );   
+  }
 
 
-   
+  getLocation(){
+    this.createAdService.getLocations()
+      .subscribe((data: any) => {
+        this.locationData = data;
+      });
+  }
+
+  getCategories(){
+    this.createAdService.getCategories()
+    .subscribe((data: any) => {
+        this.categoryData  = data;
+    });
+  }
+
+  getAdvertisementFiltered(locationId, categoryId, minPrice, maxPrice){
+    this.filteredDataObj.locationId = locationId;
+    this.filteredDataObj.categoryId = categoryId;
+
+    if(minPrice != undefined){
+      if(minPrice != ""){
+        this.filteredDataObj.minPrice = +minPrice;
+      }
+    }
+
+    if(maxPrice != undefined){
+      if(maxPrice != ""){
+        this.filteredDataObj.maxPrice = +maxPrice;
+      }
+    }
+    
+
+    this.homeService.getAdvertisementFilteredByLocation(this.filteredDataObj)
+      .subscribe((data: any) => {
+        this.adDetails = data;
+        this.filteredAdDetails = this.adDetails;
+      })
+
   }
 
   getAllAdvertisements(){
