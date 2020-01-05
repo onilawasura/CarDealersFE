@@ -7,7 +7,7 @@
     background-color: #08979D;
     display: flex;
 }
-.navbar-dark{
+.navbar-dark .nav-item .nav-link{
     color: #FFFFFF;
 }
 
