@@ -1,282 +1,291 @@
-<div class="container-fluid">  
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Vehicle Details</h3>
-      </div>
-      <div class="card-body">
-        <!-- <form> -->
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label for="Category">Category</label>
-                <select class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.CategoryId" (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
-                    <option value=""  selected="selected" >Please Select a Category</option> 
-                    <option [selected]="category.Name=='Select name'" 
-                    [disabled]="category.name=='Select name'"
-                     *ngFor="let category of categoryData" value={{category.id}}>{{category.name}}</option>
-                </select>
-              </div>
-            </div><!-- Col -->
-  
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="brand">Brand</label>
-                    <select id="brand" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.FkBrandId" (ngModelChange)="getModelsbyBrand(CreateadModel.FkBrandId)" >
-                        <option value="">Please Select a Brand</option>
-                        <option *ngFor="let brand of brandData" value={{brand.id}}>{{brand.name}}</option>
-                    </select>
-                </div>
-            </div><!-- Col -->
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Vehicle Details</h3>
+      <hr>
+      <!-- <form> -->
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="Category">Category</label>
+            <select class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.CategoryId"
+              (ngModelChange)="getSubCategoriesAndBrands(CreateadModel.CategoryId)">
+              <option value="" selected="selected">Please Select a Category</option>
+              <option [selected]="category.Name=='Select name'" [disabled]="category.name=='Select name'"
+                *ngFor="let category of categoryData" value={{category.id}}>{{category.name}}</option>
+            </select>
+          </div>
+        </div><!-- Col -->
 
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="model">Model</label>
-                    <select id="model" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.ModelId">
-                      <option value="">Please Select a Model</option>
-                      <option *ngFor="let model of modelData" value={{model.id}}>{{model.name}}</option>
-                    </select>
-                </div>
-            </div>
-          </div><!-- Row -->
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="brand">Brand</label>
+            <select id="brand" class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.FkBrandId"
+              (ngModelChange)="getModelsbyBrand(CreateadModel.FkBrandId)">
+              <option value="">Please Select a Brand</option>
+              <option *ngFor="let brand of brandData" value={{brand.id}}>{{brand.name}}</option>
+            </select>
+          </div>
+        </div><!-- Col -->
 
-          <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="edition">Model Number</label>
-                    <input type="text" class="form-control" name="edition" id="edition" required [(ngModel)]="CreateadModel.Edition">
-                </div>
-              </div><!-- Col -->
-              
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="grade">Grade</label>
-                    <input type="text" class="form-control" name="grade" id="grade" required [(ngModel)]="CreateadModel.Grade">   
-                </div>
-            </div><!-- Col -->
-  
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="modelYear">Model Year</label>
-                    <input type="text" class="form-control" name="modelYear" id="modelYear" required [(ngModel)]="CreateadModel.ModelYear"> 
-                </div>
-            </div><!-- Col -->
-          </div><!-- Row -->
-  
-          <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="uploadPhotos">Upload Photos</label>
-                    <div class="input-group mb-3">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile02" name="pic" accept="image/*"  id="file" multiple (change)="getFileDetails($event)">
-                            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-                        </div>
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Col -->
-
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <label for="bodyType">Body Type</label>
-                  <input type="text" class="form-control" name="bodyType" id="bodyType"  required [(ngModel)] = "CreateadModel.BodyType">
-              </div>
-            </div><!-- Col -->
-
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <label for="capacity">Engine Capacity</label>
-                  <input type="text" class="form-control" name="capacity" id="capacity" required [(ngModel)] = "CreateadModel.Capacity">
-              </div>
-            </div><!-- Col -->
-           </div><!-- Row -->
-
-          <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="transmission">Transmission</label>
-                    <div class="form-check" style="padding-top: 5px;">
-                      <div class="form-check form-check-inline">
-                        <input class="option-input radio" type="radio" name="transmissionOptions" id="type1" value="1" [(ngModel)]= "CreateadModel.Transmission">
-                        <label class="form-check-label" for="type1">Automatic</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="option-input radio" type="radio" name="transmissionOptions" id="type2" value="2" [(ngModel)]= "CreateadModel.Transmission">
-                        <label class="form-check-label" for="type2">Manual</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="option-input radio" type="radio" name="transmissionOptions" id="type3" value="3" [(ngModel)]= "CreateadModel.Transmission">
-                        <label class="form-check-label" for="type3">TipTronic</label>
-                      </div>
-                    </div>
-                </div>
-            </div><!-- Col -->
-  
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="name-l">Conditions</label>
-                    <div class="form-check" style="padding-top: 5px;">
-                        <div class="form-check form-check-inline">
-                            <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio1" value="false" [(ngModel)]="CreateadModel.Conditio">
-                            <label class="form-check-label" for="inlineRadio1">Brand New</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio2" value="true" [(ngModel)]="CreateadModel.Conditio">
-                            <label class="form-check-label" for="inlineRadio2">Used</label>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Col -->
-
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <label for="fuel">Fuel Type</label>
-                  <div class="form-check" style="padding-top: 5px;">
-                    <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel1" value="1" [(ngModel)]="CreateadModel.Fuel">
-                      <label class="form-check-label" for="fuel1">Petrol</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel2" value="2" [(ngModel)]="CreateadModel.Fuel">
-                      <label class="form-check-label" for="fuel2">Diesel</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel3" value="3" [(ngModel)]="CreateadModel.Fuel">
-                      <label class="form-check-label" for="fuel3"> Hybrid</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="option-input radio" type="radio" name="fuelOptions" id="fuel4" value="4" [(ngModel)]="CreateadModel.Fuel">
-                      <label class="form-check-label" for="fuel4"> Electric</label>
-                    </div>
-                </div>
-              </div>
-            </div><!-- Col -->
-          </div><!-- Row -->
-
-          <div class="row">
-              <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="milage">Milage</label>
-                    <input type="text" class="form-control" name="milage" id="milage" required [(ngModel)]="CreateadModel.Millage">
-                </div>
-            </div><!-- Col -->
-
-            <div class="col-sm-4">
-                <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" name="price" id="price" required [(ngModel)]="CreateadModel.Price">
-                </div>
-              </div><!-- Col -->
-
-              <div class="col-sm-4">
-                <div class="form-group" style="padding-top: 25px;">
-                    <input type="checkbox" class="option-input checkbox" id="nego" required value="false" [(ngModel)] = "CreateadModel.Negotiable">
-                    <label for="nego" class="form-check-label">&nbsp;Negotiable</label>
-                </div>
-              </div><!-- Col -->
-          </div><!-- Row -->
-        <!-- </form> -->
-      </div>
-    </div>
-
-    <br>
-
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Advertistment Details</h3>
-      </div>
-      <div class="card-body">
-        <!-- <form> -->
-          <div class="row">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="CreateadModel.AdTitle">
-                </div>
-            </div><!-- Col -->
-  
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label for="Loction">Location</label>
-                <!-- <select class="form-control custom-select browser-default" [(ngModel)]="CreateadModel.LocationId">
-                    <option value="">Please Select a location</option>
-                    <option *ngFor="let location of locationData" value="{{location.Id}}" >{{location.name}}</option>
-                </select> -->
-                <select id="Location" class="form-control browser-default custom-select"  [(ngModel)]="CreateadModel.FkLocationId" >
-                  <option value="">Please Select a Location</option>
-                  <option *ngFor="let location of locationData" value={{location.id}}>{{location.name}}</option>
-              </select>
-              </div>
-            </div><!-- Col -->
-
-            <div class="col-sm-4">
-                <div class="form-group">
-                    <label for="desc">Description</label>
-                    <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="CreateadModel.Description" required>
-                </div>
-              </div><!-- Col -->
-          </div><!-- Row -->
-        <!-- </form> -->
-      </div>
-    </div>
-
-    <br>
-
-    <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Person Details</h3>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="model">Model</label>
+            <select id="model" class="form-control browser-default custom-select" [(ngModel)]="CreateadModel.ModelId">
+              <option value="">Please Select a Model</option>
+              <option *ngFor="let model of modelData" value={{model.id}}>{{model.name}}</option>
+            </select>
+          </div>
         </div>
-        <div class="card-body">
-            <form>    
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="CreateadModel.name" required>
-                    </div>
-                  </div><!-- Col -->
-        
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" name="email" id="email" required [(ngModel)]="CreateadModel.email">
-                    </div>
-                  </div><!-- Col -->
-        
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label for="contactNo">Contact No</label>
-                      <input type="text" class="form-control" name="contactNo" id="contactNo" required [(ngModel)]="CreateadModel.contactno">  
-                    </div>
-                  </div><!-- Col -->
-                </div><!-- Row -->
-            </form>
-        </div>
-      </div>
+      </div><!-- Row -->
 
-      <br>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="edition">Model Number</label>
+            <input type="text" class="form-control" name="edition" id="edition" required
+              [(ngModel)]="CreateadModel.Edition">
+          </div>
+        </div><!-- Col -->
 
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Google Map</h3>
-        </div>
-        <div class="card-body">
-          <!-- <agm-map [latitude]="lat" [longitude]="lng"></agm-map> -->
-          <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
-            <agm-marker *ngIf="locationChosen" [latitude]="latitude" [longitude]="longitude"></agm-marker>
-          </agm-map>
-        </div>
-        <div class="card-footer">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="pull-right">
-                <button type="button" class="btn reset button">Reset</button>
-                <button type="button" class="btn submit button" (click)="saveadvetisment(CreateadModel)">Post Your Ad</button>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="grade">Grade</label>
+            <input type="text" class="form-control" name="grade" id="grade" required [(ngModel)]="CreateadModel.Grade">
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="modelYear">Model Year</label>
+            <input type="text" class="form-control" name="modelYear" id="modelYear" required
+              [(ngModel)]="CreateadModel.ModelYear">
+          </div>
+        </div><!-- Col -->
+      </div><!-- Row -->
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="uploadPhotos">Upload Photos</label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile02" name="pic" accept="image/*" id="file"
+                  multiple (change)="getFileDetails($event)">
+                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
+                  file</label>
+              </div>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
               </div>
             </div>
           </div>
-        </div><!-- Panel Footer -->
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="bodyType">Body Type</label>
+            <input type="text" class="form-control" name="bodyType" id="bodyType" required
+              [(ngModel)]="CreateadModel.BodyType">
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="capacity">Engine Capacity</label>
+            <input type="text" class="form-control" name="capacity" id="capacity" required
+              [(ngModel)]="CreateadModel.Capacity">
+          </div>
+        </div><!-- Col -->
+      </div><!-- Row -->
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="transmission">Transmission</label>
+            <div class="form-check" style="padding-top: 5px;">
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="transmissionOptions" id="type1" value="1"
+                  [(ngModel)]="CreateadModel.Transmission">
+                <label class="form-check-label" for="type1">Automatic</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="transmissionOptions" id="type2" value="2"
+                  [(ngModel)]="CreateadModel.Transmission">
+                <label class="form-check-label" for="type2">Manual</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="transmissionOptions" id="type3" value="3"
+                  [(ngModel)]="CreateadModel.Transmission">
+                <label class="form-check-label" for="type3">TipTronic</label>
+              </div>
+            </div>
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="name-l">Conditions</label>
+            <div class="form-check" style="padding-top: 5px;">
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio1" value="false"
+                  [(ngModel)]="CreateadModel.Conditio">
+                <label class="form-check-label" for="inlineRadio1">Brand New</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="CondionOptions" id="inlineRadio2" value="true"
+                  [(ngModel)]="CreateadModel.Conditio">
+                <label class="form-check-label" for="inlineRadio2">Used</label>
+              </div>
+            </div>
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="fuel">Fuel Type</label>
+            <div class="form-check" style="padding-top: 5px;">
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="fuelOptions" id="fuel1" value="1"
+                  [(ngModel)]="CreateadModel.Fuel">
+                <label class="form-check-label" for="fuel1">Petrol</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="fuelOptions" id="fuel2" value="2"
+                  [(ngModel)]="CreateadModel.Fuel">
+                <label class="form-check-label" for="fuel2">Diesel</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="fuelOptions" id="fuel3" value="3"
+                  [(ngModel)]="CreateadModel.Fuel">
+                <label class="form-check-label" for="fuel3"> Hybrid</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="option-input radio" type="radio" name="fuelOptions" id="fuel4" value="4"
+                  [(ngModel)]="CreateadModel.Fuel">
+                <label class="form-check-label" for="fuel4"> Electric</label>
+              </div>
+            </div>
+          </div>
+        </div><!-- Col -->
+      </div><!-- Row -->
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="milage">Milage</label>
+            <input type="text" class="form-control" name="milage" id="milage" required
+              [(ngModel)]="CreateadModel.Millage">
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" name="price" id="price" required [(ngModel)]="CreateadModel.Price">
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group" style="padding-top: 25px;">
+            <input type="checkbox" class="option-input checkbox" id="nego" required value="false"
+              [(ngModel)]="CreateadModel.Negotiable">
+            <label for="nego" class="form-check-label">&nbsp;Negotiable</label>
+          </div>
+        </div><!-- Col -->
+      </div><!-- Row -->
+      <!-- </form> -->
+    </div>
+
+    <hr>
+    <div class="card-body">
+      <h3 class="card-title">Advertistment Details</h3>
+      <hr>
+      <!-- <form> -->
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title" required
+              [(ngModel)]="CreateadModel.AdTitle">
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="Loction">Location</label>
+            <!-- <select class="form-control custom-select browser-default" [(ngModel)]="CreateadModel.LocationId">
+                    <option value="">Please Select a location</option>
+                    <option *ngFor="let location of locationData" value="{{location.Id}}" >{{location.name}}</option>
+                </select> -->
+            <select id="Location" class="form-control browser-default custom-select"
+              [(ngModel)]="CreateadModel.FkLocationId">
+              <option value="">Please Select a Location</option>
+              <option *ngFor="let location of locationData" value={{location.id}}>{{location.name}}</option>
+            </select>
+          </div>
+        </div><!-- Col -->
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="desc">Description</label>
+            <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="CreateadModel.Description"
+              required>
+          </div>
+        </div><!-- Col -->
+      </div><!-- Row -->
+      <!-- </form> -->
+    </div>
+
+    <hr>
+
+    <div class="card-body">
+      <h3 class="card-title">Person Details</h3>
+      <hr>
+      <form>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" id="name" [(ngModel)]="CreateadModel.name" required>
+            </div>
+          </div><!-- Col -->
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="email" id="email" required
+                [(ngModel)]="CreateadModel.email">
+            </div>
+          </div><!-- Col -->
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label for="contactNo">Contact No</label>
+              <input type="text" class="form-control" name="contactNo" id="contactNo" required
+                [(ngModel)]="CreateadModel.contactno">
+            </div>
+          </div><!-- Col -->
+        </div><!-- Row -->
+      </form>
+    </div>
+
+    <hr>
+    <div class="card-body">
+      <h3 class="card-title">Google Map</h3>
+      <hr>
+      <!-- <agm-map [latitude]="lat" [longitude]="lng"></agm-map> -->
+      <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)">
+        <agm-marker *ngIf="locationChosen" [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="pull-right">
+          <button type="button" class="btn reset button">Reset</button>
+          <button type="button" class="btn submit button" (click)="saveadvetisment(CreateadModel)">Post Your Ad</button>
+        </div>
       </div>
+    </div>
   </div>
+</div>

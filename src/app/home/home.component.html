@@ -1,109 +1,110 @@
-<div class="container-fluid page-body-wrapper">
-  <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <h5 class="h5"> Advance Search </h5>
-    <ul class="nav">
-      <li class="nav-item" style="padding-top: 20px;">
-        <a class="nav-link" href="#location" aria-expanded="false" aria-controls="form-elements">
-          <span class="menu-title">Location</span>
-        </a>
-        <div id="location">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> 
-              <a class="nav-link"  routerLink="." (click)="getAdvertisementFiltered(null, null)"> 
-                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Select All
-              </a>
-            </li>
-            <li class="nav-item" *ngFor="let location of locationData"> 
-              <a class="nav-link"  routerLink="." (click)="getAdvertisementFiltered(location.id, null)"> 
-                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;{{location.name}}
-              </a>
-            </li>
-            <!-- <li class="nav-item"> 
-              <a class="nav-link" href="#"> 
-                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Gampaha
-              </a>
-            </li>
-            <li class="nav-item"> 
-              <a class="nav-link" href="#"> 
-                <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Kaluthara
-              </a>
-            </li> -->
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item" style="padding-top: 20px;">
-        <a class="nav-link" href="#category" aria-expanded="false" aria-controls="ui-basic">
-          <span class="menu-title">Category</span>
-        </a>
-        <div  id="category">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> 
-              <a class="nav-link"   routerLink="." (click)="getAdvertisementFiltered(null, null)"> 
-                <i class="fa fa-car" aria-hidden="true"></i> 
-                &nbsp;&nbsp;Select All
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 sidebar">
+      <nav class="navbar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#location" class="nav-link">
+              <span class="menu-title"> Location </span>
             </a>
-            </li>
-            <li class="nav-item" *ngFor="let cat of categoryData"> 
-              <a class="nav-link"   routerLink="." (click)="getAdvertisementFiltered(null, cat.id)"> 
-                <i class="fa fa-car" aria-hidden="true"></i> 
-                &nbsp;&nbsp;{{cat.name}}
+            <div id="location">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="." (click)="getAdvertisementFiltered(null, null)">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;Select All
+                  </a>
+                </li>
+                <li class="nav-item other" *ngFor="let location of locationData">
+                  <a class="nav-link" routerLink="." (click)="getAdvertisementFiltered(location.id, null)">
+                    &nbsp;&nbsp;{{location.name}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#category" class="nav-link">
+              <span class="menu-title"> Category </span>
             </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item" style="padding-top: 20px;">
-        <a class="nav-link" href="#price" aria-expanded="false" aria-controls="form-elements">
-          <span class="menu-title">Price</span>
-        </a>
-        <div id="price">
-          <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-              <span class ="spantext" id="inputGroup-sizing-sm">Min Price</span>
+            <div id="category">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="." (click)="getAdvertisementFiltered(null, null)">
+                    <i class="fa fa-car" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Select All
+                  </a>
+                </li>
+                <li class="nav-item other" *ngFor="let cat of categoryData">
+                  <a class="nav-link" routerLink="." (click)="getAdvertisementFiltered(null, cat.id)">
+                    &nbsp;&nbsp;{{cat.name}}
+                  </a>
+                </li>
+              </ul>
             </div>
-            <input type="text" class="form-control price" aria-label="Sizing example input" [(ngModel)]="minPrice" aria-describedby="inputGroup-sizing-sm">
-          </div>
-          <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class ="spantext" id="inputGroup-sizing-sm">Max Price</span>
-              </div>
-              <input type="text" class="form-control price" aria-label="Sizing example input" [(ngModel)]="maxPrice" aria-describedby="inputGroup-sizing-sm">
-          </div>
-          <button type="button" class="btn btn-sm btngo" (click)="getAdvertisementFiltered(null, null, minPrice, maxPrice)">Go</button>
-        </div>
-      </li>
-    </ul>
-  </nav> 
-
-  <div class="main-panel">
-    <div class="content">
-      <div class="container-fluid panel">
-        <div class="row">
-          <div class="col-md-12">
-            <input class="form-control searchbar" placeholder="Search" aria-label="Search" type="text" [(ngModel)]="searchTerm">
-            <!-- {{userDetails.email}} -->
-          </div>
-        </div>
-        
-        <div class="card mb-3" id="comp"  *ngFor="let ad of filteredAdDetails">
-          <a href="/ad/{{ad.adId}}">
-          <div class="row no-gutters">
-            <div class="col-md-4" >
-              <img src="{{ad.url}}" class="card-img-top img" alt="profile image">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h4 class="title"><strong> {{ad.adTitle}} </strong> </h4>
-                  <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
-                  <hr>
-                  <div class="stats">
-                    <h5 style="color: #110133;"> Price: Rs. {{ad.price | number}}.00</h5>
+          </li>
+          <li class="nav-item">
+            <a href="#price" class="nav-link">
+              <span class="menu-title"> Price </span>
+            </a>
+            <div id="price">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <div class="input-group input-group-sm mb-3">
+                    <input type="text" class="form-control price" placeholder="Min Price"
+                      aria-label="Sizing example input" [(ngModel)]="minPrice" aria-describedby="inputGroup-sizing-sm">
                   </div>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
+                </li>
+                <li class="nav-item">
+                  <div class="input-group input-group-sm mb-3">
+                    <input type="text" class="form-control price" placeholder="Max Price"
+                      aria-label="Sizing example input" [(ngModel)]="maxPrice" aria-describedby="inputGroup-sizing-sm">
+                  </div>
+                </li>
+                <button type="button" class="btn btn-sm btngo"
+                  (click)="getAdvertisementFiltered(null, null, minPrice, maxPrice)">Go</button>
+              </ul>
             </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-sm-10">
+      <div class="row">
+        &nbsp;&nbsp;
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <input class="form-control searchbar" placeholder="Search" aria-label="Search" type="text"
+            [(ngModel)]="searchTerm">
+        </div>
+      </div>
+      <div class="row">
+        &nbsp;&nbsp;
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card mb-3" *ngFor="let ad of filteredAdDetails">
+            <a href="/ad/{{ad.adId}}">
+              <div class="row no-gutters">
+                <div class="col sm-4">
+                  <img src="{{ad.url}}" class="img" alt="profile image">
+                </div>
+                <div class="col-sm-8">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <strong> {{ad.adTitle}} </strong>
+                    </h5>
+                    <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
+                    <hr>
+                    <div class="stats">
+                      <h5 style="color: #110133;"> Price: Rs. {{ad.price | number}}.00</h5>
+                    </div>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-          </a>
         </div>
       </div>
     </div>

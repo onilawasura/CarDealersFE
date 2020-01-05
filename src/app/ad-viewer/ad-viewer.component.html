@@ -1,173 +1,244 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-6">
-            <ng-image-slider [images]="imageObject" #nav class="imageslider"></ng-image-slider>
-        </div> 
-    </div>
-    
-    <!-- <div class="col">
-        <ng-image-slider [images]="imageObject" #nav></ng-image-slider> 
-            <h1>{{advertisment.categoryType}}</h1>
-    </div> -->
-   
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Vehicle Details</h5>
+        <div class="col-sm-8">
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card imageslider">
+                        <ng-image-slider [images]="imageObject" #nav ></ng-image-slider>
+                    </div>
+                </div> 
+            </div>
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="priceholder">
+                        <h5 class="price">Price: LKR {{advertisment.price}}.00</h5>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.categoryType}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Brand: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.brandType}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Model: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.modelType}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Grade: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.grade}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Model Number: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.edition}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Model Year: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.modelYear}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title" *ngIf="advertisment.condition">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used</label>
-                            <label class="title" *ngIf="!advertisment.condition">Condition: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Brandnew</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title" *ngIf="advertisment.fuelType == 1">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Petrol</label>
-                            <label class="title" *ngIf="advertisment.fuelType == 2">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Diesel</label>
-                            <label class="title" *ngIf="advertisment.fuelType == 3">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hybrid</label>
-                            <label class="title" *ngIf="advertisment.fuelType == 4">Fuel Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Electric</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title" *ngIf="advertisment.transmission == '1'">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Automatic</label>
-                            <label class="title" *ngIf="advertisment.transmission == '2'">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manual</label>
-                            <label class="title" *ngIf="advertisment.transmission == '3'">Transmission: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TipTronic</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Body Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.bodyType}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Milage: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.milage}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Engine Capacity: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.capacity}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Location: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.destination}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <button class="btn btnreport btn-block" type="button">Report Adveritistment</button>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
+                <div class="col-sm-4">
+                    &nbsp;&nbsp;
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btnreport btn-block" type="button">Report Adveritistment</button>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Adveritistment Details</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.price}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Description: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.description}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.name}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="title">Contact Number: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{advertisment.contactno}}</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="sub-title">Rate Advetiser</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <br>
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <label class="sub-title">Google Map</label>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                    <div class="row">          
-                        <div class="col-sm-12">
-                            <agm-map [latitude]="advertisment.latitude" [longitude]="advertisment.longitude" (mapClick)="onChoseLocation($event)">
-                                <agm-marker [latitude]="advertisment.latitude" [longitude]="advertisment.longitude"></agm-marker>
-                            </agm-map>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> &nbsp;&nbsp;Advertistment Description </h5> 
+                            <hr>
+                            <label class="card-text"> {{advertisment.description}}</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Comments</h5>
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa fa-car" aria-hidden="true"></i> &nbsp;&nbsp;Vehicle Details</h5>
+                            <hr>
+                            <div class="table-responsive-sm">
+                                <table class="table table-borderless table-striped">
+                                  <tbody>
+                                      <tr >
+                                          <td> Brand </td>
+                                          <td> {{advertisment.brandType}} </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Model </td>
+                                          <td> {{advertisment.modelType}} </td>
+                                      </tr>
+                                      <tr>
+                                        <td> Model Number </td>
+                                        <td> {{advertisment.edition}} </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Grade </td>
+                                          <td> {{advertisment.grade}} </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Model Year</td>
+                                          <td> {{advertisment.modelYear}} </td>
+                                      </tr>
+                                      <tr>
+                                          <td>Body Type</td>
+                                          <td> {{advertisment.bodyType}} </td>
+                                      </tr>
+                                      <tr>
+                                          <td>Engine Capacity</td>
+                                          <td> {{advertisment.capacity}} </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Transmission </td>
+                                          <td *ngIf="advertisment.transmission == '1'"> Automatic </td>
+                                          <td *ngIf="advertisment.transmission == '2'"> Manual </td>
+                                          <td *ngIf="advertisment.transmission == '3'"> TipTronic </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Conditions </td>
+                                          <td *ngIf="advertisment.condition"> Used </td>
+                                          <td *ngIf="!advertisment.condition"> Brand New </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Fuel Type </td>
+                                          <td *ngIf="advertisment.fuelType == 1"> Petrol </td>
+                                          <td *ngIf="advertisment.fuelType == 2"> Diesel </td>
+                                          <td *ngIf="advertisment.fuelType == 3"> Hybrid </td>
+                                          <td *ngIf="advertisment.fuelType == 4"> Electric </td>
+                                      </tr>
+                                      <tr>
+                                          <td> Milage </td>
+                                          <td> {{advertisment.milage}} </td>
+                                      </tr>
+                                  </tbody>  
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                 <div class="card-body">
-                    <div class="container pb-cmnt-container">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-offset-3">
-                                <div class="panel panel-info">
-                                    <div class="panel-body">
-                                        <textarea *ngIf="isUserLogged && userDetails.role == 'User'" placeholder="Write your comment here!" [(ngModel)]="userComment.Name" class="pb-cmnt-textarea"></textarea>
-                                        <form class="form-inline">
-                                            <button *ngIf="isUserLogged && userDetails.role == 'User'" class="btn" type="button" (click)="addComments()">Post Comment</button>
-                                        </form>
+            </div>
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; Add Comments</h5>
+                            <hr>
+                            <div class="container cmnt-container">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-offset-3">
+                                        <div class="panel panel-info">
+                                            <div class="panel-body">
+                                                <textarea *ngIf="isUserLogged && userDetails.role == 'User'" placeholder="Write your comment here!" [(ngModel)]="userComment.Name" class="cmnt-textarea"></textarea>
+                                                <form class="form-inline">
+                                                    <button *ngIf="isUserLogged && userDetails.role == 'User'" class="btn" type="button" (click)="addComments()">Post Comment</button>
+                                                </form>
 
-                                        <div *ngFor="let comment of lstComments">
-                                            {{comment.userFullName}} Saya {{comment.comment}}
+                                                <div class="comments">
+                                                    <div class="comment" *ngFor="let comment of lstComments" >
+                                                        <div class="comment-avatar">
+                                                            <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="comment-box">
+                                                            <div class="comment text">
+                                                                {{comment.comment}}
+                                                            </div>
+                                                            <div class="comment-footer">
+                                                                <div class="comment-info">
+                                                                    <span class="comment-author">
+                                                                        {{comment.userFullName}}
+                                                                    </span>
+                                                                    <span class="comment-date">
+                                                                        Jan 2, 2020 11:32:04 PM
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa fa-info" aria-hidden="true"></i> &nbsp;&nbsp;Advertistment Details</h5>
+                            <hr>
+                            <div class="table-responsive-sm">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td> Category</td>
+                                            <td> {{advertisment.categoryType}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Location </td>
+                                            <td> {{advertisment.destination}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Date </td>
+                                            <td> Jan 2, 2020</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa fa-user-o" aria-hidden="true"></i> &nbsp;&nbsp;Advertiser Details</h5>
+                            <hr>
+                            <div class="table-responsive-sm">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td> Name</td>
+                                            <td> {{advertisment.name}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Email </td>
+                                            <td> {{advertisment.email}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td> Contact Number </td>
+                                            <td> {{advertisment.contactno}} </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;&nbsp;
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp; Location</h5>
+                            <hr>
+                            <agm-map [latitude]="advertisment.latitude" [longitude]="advertisment.longitude" (mapClick)="onChoseLocation($event)">
+                                <agm-marker [latitude]="advertisment.latitude" [longitude]="advertisment.longitude"></agm-marker>
+                            </agm-map>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
