@@ -29,6 +29,10 @@ import { TestComponentComponent } from './test-component/test-component.componen
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { MyprofileHomeComponent } from './myprofile-home/myprofile-home.component';
+import { MyAccountComponent } from './myprofile-home/Components/my-account/my-account.component';
+import { MyFavouriteComponent } from './myprofile-home/Components/myfavourite/my-favourite/my-favourite.component';
+import { MyprofileHomeMenuComponent } from './myprofile-home/Components/myprofile-home-menu/myprofile-home-menu.component';
 
 
 
@@ -44,7 +48,11 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     AdViewerComponent,
     TestComponentComponent,
     AdminPanelComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    MyprofileHomeComponent,
+    MyAccountComponent,
+    MyFavouriteComponent,
+    MyprofileHomeMenuComponent
   ],
   imports: [
     BrowserModule,

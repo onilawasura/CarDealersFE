@@ -91,13 +91,21 @@ export class HomeComponent implements OnInit {
     if(minPrice != undefined){
       if(minPrice != ""){
         this.filteredDataObj.minPrice = +minPrice;
+      }else{
+        this.filteredDataObj.minPrice = null;
       }
+    }else{
+      this.filteredDataObj.minPrice = null;
     }
 
     if(maxPrice != undefined){
       if(maxPrice != ""){
         this.filteredDataObj.maxPrice = +maxPrice;
+      }else{
+        this.filteredDataObj.maxPrice = null
       }
+    }else{
+      this.filteredDataObj.maxPrice = null
     }
     
 
