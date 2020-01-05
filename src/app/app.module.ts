@@ -33,6 +33,7 @@ import { MyprofileHomeComponent } from './myprofile-home/myprofile-home.componen
 import { MyAccountComponent } from './myprofile-home/Components/my-account/my-account.component';
 import { MyFavouriteComponent } from './myprofile-home/Components/myfavourite/my-favourite/my-favourite.component';
 import { MyprofileHomeMenuComponent } from './myprofile-home/Components/myprofile-home-menu/myprofile-home-menu.component';
+import { ProfileService } from './myprofile-home/profile.service';
 
 
 
@@ -67,7 +68,7 @@ import { MyprofileHomeMenuComponent } from './myprofile-home/Components/myprofil
       apiKey: 'AIzaSyBsfNaHgeIjbCfsxJoLxPyYXk8LZhcoxuw'
     })
   ],
-  providers: [HomeServiceService, AdViewerService, CreateAdService, {
+  providers: [HomeServiceService, AdViewerService, CreateAdService, ProfileService , {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
