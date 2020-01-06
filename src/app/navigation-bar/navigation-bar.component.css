@@ -4,7 +4,7 @@
     font-size: 30px;
 }
 .navbar {
-    background-color: #08979D;
+    background-color: #393E46;
     display: flex;
 }
 .navbar-dark .nav-item .nav-link{
@@ -19,9 +19,9 @@
 }
 
 .btnsubmit:hover{
-    border: 1px solid #FFFFFF;
-    background-color: #FFFFFF;
-    color:#08979D;
+    border: 1px solid #00ADB5;
+    background-color: #00ADB5;
+    color:#FFFFFF;
 }
 
 .btndrop{
@@ -49,28 +49,28 @@
 }
 
 .button{
-    border: 1px solid #6EC6CA;
+    border: 1px solid #00ADB5;
     color: #FFFFFF;
     border-radius: 10px;
-    background-color: #6EC6CA;
+    background-color: #00ADB5;
 }
 .button:hover{
-    border: 1px solid #6EC6CA;
+    border: 1px solid #00ADB5;
     background-color: #FFFFFF;
-    color:#6EC6CA;
+    color:#00ADB5;
 }
 
 .btnchange{
-    border: 1px solid #3D0E1E;
+    border: 1px solid #D65A31;
     color: #FFFFFF;
     border-radius: 10px;
-    background-color: #3D0E1E;
+    background-color: #D65A31;
 }
 .btnchange:hover{
-    border: 1px solid #3D0E1E;
+    border: 1px solid #D65A31;
     background-color: #FFFFFF;
-    color:#3D0E1E;
+    color:#D65A31;
 }
 .fa-user{
-    color: #6EC6CA;
+    color: #00ADB5;
 }

@@ -1,5 +1,5 @@
 .container-fluid{
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #EEEEEE 100%);
 }
 
 .card{
@@ -26,15 +26,15 @@
 }
 
 .btn{
-    border: 1px solid #6EC6CA;
-    color: #08979D;
+    border: 1px solid #393E46;
+    color: #393E46;
     border-radius: 12px;
     margin: 5px;
     padding: 8px 10px;
 }
 .btn:hover{
-    border: 1px solid #6EC6CA;
-    background-color: #6EC6CA;
+    border: 1px solid #393E46;
+    background-color: #393E46;
     color:#FFFFFF;
 }
 
@@ -86,7 +86,7 @@
 }
   
 .comment .comment-text{
-    color: #555f77;
+    color: #393E46;
     font-size: 15px;
     margin-bottom: 25px;
 }
@@ -113,7 +113,7 @@ agm-map {
     height: 300px;
 }
 .priceholder{
-    background-color: #F8B400;
+    background-color: #D65A31;
     padding: 10px;
     text-align: center;
     color: #FAF5E4;
@@ -125,20 +125,20 @@ agm-map {
 }
 
 .btnreport{
-    border: 1px solid #3D0E1E;
-    background-color: #3D0E1E;
+    border: 1px solid #D65A31;
+    background-color: #D65A31;
     color:#FFFFFF;
     border-radius: 12px;
     margin: 0;
     padding: 8px 10px;
 }
 .btnreport:hover{
-    border: 1px solid #3D0E1E;
-    color: #3D0E1E;
+    border: 1px solid #D65A31;
+    color: #D65A31;
     background-color: transparent;
 }
 .card-title{
-    color:#08979D;
+    color:#393E46;
 }
 .rating > span:hover:before {
     content: "\2605";
