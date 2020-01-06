@@ -32,6 +32,9 @@ export class AdViewerComponent implements OnInit {
     UserId: "",
     AdvertisementId: 0
   }
+  item = {
+    isFavourite: false
+  }
 
   constructor(private adViewerService: AdViewerService,  private activatedRoute: ActivatedRoute,  private userService: UserService) { }
 
@@ -113,8 +116,9 @@ getAdvertisement(){
   });
 }
 
-addToFavourite(item){
-  var xx = item;
+addToFavourite(){
+  this.item.isFavourite = !this.item.isFavourite;
+  var xx = this.item.isFavourite;
 }
 
 setImages(img){

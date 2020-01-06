@@ -178,3 +178,7 @@ agm-map {
       border: none;
       background-color: transparent;
 }
+
+.active {
+    color: red; 
+   }
