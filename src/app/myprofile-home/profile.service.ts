@@ -13,8 +13,12 @@ export class ProfileService {
   getAdvertisementByUserUrl: string;
 
   getAdvertisementByUser(userId){
-    this.getAdvertisementByUserUrl = this.BaseURI + '/advertistment/GetAdvertistmentByUser/' +userId;
-    return this.http.get(this.getAdvertisementByUserUrl);
+
+    var jsonObj = {
+      UserId: userId
+    }
+    this.getAdvertisementByUserUrl = this.BaseURI + '/advertistment/GetAdvertistmentByUser';
+    return this.http.post(this.getAdvertisementByUserUrl, jsonObj);
   }
 
   
