@@ -7,15 +7,33 @@
             <hr>
             <p class="text-center"> <i class="fa fa-user-o fa-5x" aria-hidden="true"></i> <br> Welcome to account</p>
 
+            <div class="notfound">
+              <div class="headings">
+                <h1>Oops!</h1>
+                <h2>You don't have any ads yet.</h2>
+              </div>
+              <a *ngIf="filteredAdDetails.length == 0" href="postad"> Post Your Ad Now </a>
+            </div>
+           
 
-            <a *ngIf="filteredAdDetails.length == 0" href="postad">
-                plaese post ad 
-            </a>
+            <div class="row row-cols-1 row-cols-md-3">
+              <div class="col mb-4" *ngFor="let ad of filteredAdDetails">
+                <a  *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
+                  <div class="card">
+                    <img src="{{ad.url}}" class="card-img-top" alt="profile image">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong> {{ad.adTitle}} </strong></h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
             <!-- start -->
             <div class="row">
                 <div class="col-sm-12">
                   <div class="card mb-3" *ngFor="let ad of filteredAdDetails">
-                    <a  *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
+                    
                       <div class="row no-gutters">
                         <div class="col sm-4">
                           <img src="{{ad.url}}" class="img" alt="profile image">
