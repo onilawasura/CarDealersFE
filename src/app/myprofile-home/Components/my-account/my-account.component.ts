@@ -41,7 +41,7 @@ export class MyAccountComponent implements OnInit {
   }
 
   getAllAdvertisements(){
-    this.profileService.getAdvertisementByUser("12345")
+    this.profileService.getAdvertisementByUser(this.userDetails.userId)
       .subscribe((data: any) => {
         var xx =data;
         this.adDetails = data;
