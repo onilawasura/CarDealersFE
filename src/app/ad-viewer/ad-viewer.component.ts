@@ -113,6 +113,10 @@ getAdvertisement(){
   });
 }
 
+addToFavourite(){
+  
+}
+
 setImages(img){
   this.imageObject = [{
     image: img[0],

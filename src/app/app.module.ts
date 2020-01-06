@@ -34,6 +34,8 @@ import { MyAccountComponent } from './myprofile-home/Components/my-account/my-ac
 import { MyFavouriteComponent } from './myprofile-home/Components/myfavourite/my-favourite/my-favourite.component';
 import { MyprofileHomeMenuComponent } from './myprofile-home/Components/myprofile-home-menu/myprofile-home-menu.component';
 import { ProfileService } from './myprofile-home/profile.service';
+import {TimeAgoPipe} from 'time-ago-pipe';
+
 
 
 
@@ -53,7 +55,8 @@ import { ProfileService } from './myprofile-home/profile.service';
     MyprofileHomeComponent,
     MyAccountComponent,
     MyFavouriteComponent,
-    MyprofileHomeMenuComponent
+    MyprofileHomeMenuComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,

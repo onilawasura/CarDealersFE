@@ -7,12 +7,12 @@
             <hr>
             <p class="text-center"> <i class="fa fa-user-o fa-5x" aria-hidden="true"></i> <br> Welcome to account</p>
 
-            <div class="notfound">
+            <div *ngIf="filteredAdDetails.length == 0"  class="notfound">
               <div class="headings">
                 <h1>Oops!</h1>
                 <h2>You don't have any ads yet.</h2>
               </div>
-              <a *ngIf="filteredAdDetails.length == 0" href="postad"> Post Your Ad Now </a>
+              <a href="postad"> Post Your Ad Now </a>
             </div>
            
 
@@ -29,36 +29,7 @@
                 </a>
               </div>
             </div>
-            <!-- start -->
-            <div class="row">
-                <div class="col-sm-12">
-                  <div class="card mb-3" *ngFor="let ad of filteredAdDetails">
-                    
-                      <div class="row no-gutters">
-                        <div class="col sm-4">
-                          <img src="{{ad.url}}" class="img" alt="profile image">
-                        </div>
-                        <div class="col-sm-8">
-                          <div class="card-body">
-                            <h5 class="card-title">
-                              <strong> {{ad.adTitle}} </strong>
-                            </h5>
-                            <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
-                            <hr>
-                            <div class="stats">
-                              <h5 style="color: #110133;"> Price: Rs. {{ad.price | number}}.00</h5>
-                            </div>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                    
-                    
-                  </div>
-                </div>
-              </div>
-            <!-- end -->
+           
         </div>
     </div>
 </div>

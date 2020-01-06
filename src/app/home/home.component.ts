@@ -3,8 +3,6 @@ import { ToastrService } from 'ngx-toastr';
 import { HomeServiceService } from './Shared/home-service.service';
 import { UserService } from '../user/Sahred/user.service';
 import { CreateAdService } from '../createad/create-ad.service';
-import * as moment from 'moment';
-import 'moment/locale/pt-br';
 
 
 @Component({
@@ -56,7 +54,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    // this.toastr.success('Hello world!', 'Toastr fun!');
    //this.getAllAdvertisements();
-   console.log(moment.locale());
    this.getAdvertisementFiltered(null, null, null, null);
 
    this.getLocation();

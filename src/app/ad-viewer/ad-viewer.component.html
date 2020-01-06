@@ -29,7 +29,7 @@
                 <div class="col-sm-4">
                     <!-- <p class="text-center heartpara"><a href="#" class="heart"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a></p> -->
                     <div class="heartpara text-center">
-                        <button class="heart btn"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Add to Favourite</button>
+                        <button class="heart btn" (click)="addToFavourite()"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Add to Favourite</button>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -153,7 +153,7 @@
                                                                         {{comment.userFullName}}
                                                                     </span>
                                                                     <span class="comment-date">
-                                                                        Jan 2, 2020 11:32:04 PM
+                                                                        {{comment.date | timeAgo}}
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -193,7 +193,7 @@
                                         </tr>
                                         <tr>
                                             <td> Date </td>
-                                            <td> Jan 2, 2020</td>
+                                            <td> {{advertisment.date | date}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
