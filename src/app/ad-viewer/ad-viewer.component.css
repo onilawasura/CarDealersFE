@@ -113,7 +113,7 @@ agm-map {
     height: 300px;
 }
 .priceholder{
-    background-color: #D65A31;
+    background-color: #f7be16;
     padding: 10px;
     text-align: center;
     color: #FAF5E4;
@@ -174,7 +174,7 @@ agm-map {
       border: none;
 }
 .heart:hover{
-      color: #D65A31;
+      color: #BB1542;
       border: none;
       background-color: transparent;
 }

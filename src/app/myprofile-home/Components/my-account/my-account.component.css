@@ -1,11 +1,6 @@
 .row{
     padding-top: 15px;
 }
-.fa-user-o{
-    color: #00ADB5;
-    box-shadow: rgba(0, 0, 0, .15);
-}
-
 h1{
     font-family: 'Raleway', sans-serif;
     font-size: 236px;
@@ -84,4 +79,17 @@ a{
     color: #393E46;
     margin-bottom: 0px;
     padding-top: 1rem;
+}
+.btndelete{
+    border: 1px solid #D65A31;
+    background-color: transparent;
+    color:#D65A31;
+    border-radius: 5px;
+    margin: 0;
+    padding: 8px 10px;
+}
+.btndelete:hover{
+    border: 1px solid #D65A31;
+    color: #FFFFFF;
+    background-color: #D65A31;
 }
