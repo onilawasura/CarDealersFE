@@ -167,3 +167,12 @@ agm-map {
      content: "\2605";
      position: absolute;
   }
+  .heart{
+      color: #393E46;
+      border: none;
+  }
+  .heart:hover{
+      color: #D65A31;
+      border: none;
+      background-color: transparent;
+  }
