@@ -35,7 +35,7 @@ span {
 }
 
 a {
-	color: #333;
+	color: #393E46;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
@@ -43,9 +43,9 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #6EC6CA;
+	border: 1px solid #00ADB5;
 	background-color: #FFFFFF;
-	color: #6EC6CA;
+	color: #00ADB5;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -54,7 +54,7 @@ button {
 	transition: transform 80ms ease-in;
 }
 button:hover{
-	background-color: #6EC6CA;
+	background-color: #00ADB5;
 	color: #FFFFFF;
 }
 
@@ -75,7 +75,7 @@ button.ghost {
 button.ghost:hover{
 	background-color: #FFFFFF;
 	border-color: #FFFFFF;
-	color: #6EC6CA;
+	color: #00ADB5;
 }
 
 form {
@@ -90,7 +90,7 @@ form {
 }
 
 input {
-	background-color: #eee;
+	background-color: #EEEEEE;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
@@ -99,7 +99,7 @@ input {
 }
 
 .container {
-	background-color: #fff;
+	background-color: #FFFFFF;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
@@ -141,7 +141,7 @@ input {
 }
 
 .overlay {
-	background: #6EC6CA;
+	background: #00ADB5;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

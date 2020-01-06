@@ -17,7 +17,13 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="priceholder">
-                        <h5 class="price">Price: LKR {{advertisment.price}}.00</h5>
+                        <h5 class="price">Price: LKR {{advertisment.price | number}}.00</h5>
+                    </div>
+                    <div>
+                        <p> Price Negotiable: 
+                            <span *ngIf="advertisment.negotiable">Yes</span>
+                            <span *ngIf="!advertisment.negotiable">No</span> 
+                        </p>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -100,7 +106,7 @@
                                           <td *ngIf="advertisment.fuelType == 4"> Electric </td>
                                       </tr>
                                       <tr>
-                                          <td> Milage </td>
+                                          <td> Mileage </td>
                                           <td> {{advertisment.milage}} </td>
                                       </tr>
                                   </tbody>  

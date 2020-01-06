@@ -4,7 +4,7 @@
 }
 .sidebar{
     min-height: calc(100vh - 70px);
-    background-color:#6EC6CA;
+    background-color:#00ADB5;
     font-family: "Roboto", sans-serif;
     padding: 0;
     color: #FFFFFF;
@@ -27,7 +27,7 @@
 }
 .card-title{
     margin: 0;
-    color: #110133;
+    color: #393E46;
     text-transform: capitalize;
     font-size: 30px;
 }
@@ -36,12 +36,12 @@ a{
     background-color: transparent
  }
 .btn{
-    color: #08979D;
+    color: #00ADB5;
     margin: 5px;
     padding: 10px;
 }
 .btn:hover{
-    background-color: #08979D;
+    background-color: #00ADB5;
     color:#FFFFFF;
 }
 .btngo{
@@ -54,7 +54,7 @@ a{
 }
 .btngo:hover{
     background-color: #FFFFFF;
-    color:#08979D;
+    color:#00ADB5;
 }
 .searchbar{
     border-radius: 10px;
@@ -76,7 +76,7 @@ a{
 .category{
     font-size: 14px;
     font-weight: normal;
-    color: #110133;
+    color: #393E46;
     margin-bottom: 0px;
     padding-top: 1rem;
 }

@@ -9,28 +9,28 @@
 
 }
 .card-title, .title{
-    color:#08979D;
+    color:#393E46;
 }
 .button{
-    border: 1px solid #6EC6CA;
-    color: #08979D;
+    border: 1px solid #393E46;
+    color: #393E46;
     border-radius: 16px;
     margin: 10px;
     padding: 8px 20px;
 }
 .button:hover{
-    border: 1px solid #6EC6CA;
-    background-color: #6EC6CA;
+    border: 1px solid #393E46;
+    background-color: #393E46;
     color:#FFFFFF;
 }
 
 .btn-outline-secondary{
-    border: 1px solid #6EC6CA;
-    color: #6EC6CA;
+    border: 1px solid #393E46;
+    color: #393E46;
 }
 .btn-outline-secondary:hover{
-    border: 1px solid #6EC6CA;
-    background-color: #6EC6CA;
+    border: 1px solid #393E46;
+    background-color: #393E46;
     color:#FFFFFF;
 }
 
@@ -62,7 +62,7 @@ agm-map {
     background: #9faab7;
 }
 .option-input:checked {
-    background: #110133;
+    background: #393E46;
   }
   .option-input:checked::before {
     height: 15px;
@@ -72,7 +72,7 @@ agm-map {
     line-height: 50px;
   }
   .option-input:checked::after {
-    background: #110133;
+    background: #393E46;
     display: block;
     position: relative;
     z-index: 100;
