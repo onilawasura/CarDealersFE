@@ -21,20 +21,16 @@
     padding-left: 2rem ;
     padding-bottom: 12px;
 }
-
+.nav-link{
+    color: #FFFFFF;
+}
+.sidebar .nav .sub-menu .nav-item .nav-link{
+    color: #FFFFFF;
+}
 .other{
      padding-left: 1.5rem;
 }
-.card-title{
-    margin: 0;
-    color: #393E46;
-    text-transform: capitalize;
-    font-size: 30px;
-}
-a{
-    text-decoration: none;
-    background-color: transparent
- }
+
 .btn{
     color: #00ADB5;
     margin: 5px;
@@ -67,12 +63,16 @@ a{
     box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
     border: none;
 }
-.nav-link{
-    color: #FFFFFF;
+.card-title{
+    margin: 0;
+    color: #393E46;
+    text-transform: capitalize;
+    font-size: 30px;
 }
-.sidebar .nav .sub-menu .nav-item .nav-link{
-    color: #FFFFFF;
-}
+a{
+    text-decoration: none;
+    background-color: transparent
+ }
 .category{
     font-size: 14px;
     font-weight: normal;
@@ -85,3 +85,4 @@ a{
     height: 150px;
     width: 65%;
 }
+

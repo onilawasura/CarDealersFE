@@ -7,9 +7,9 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card imageslider">
-                        <ng-image-slider [images]="imageObject" #nav ></ng-image-slider>
+                        <ng-image-slider [images]="imageObject" #nav></ng-image-slider>
                     </div>
-                </div> 
+                </div>
             </div>
             <div class="row">
                 &nbsp;&nbsp;
@@ -19,17 +19,19 @@
                     <div class="priceholder">
                         <h5 class="price">Price: LKR {{advertisment.price | number}}.00</h5>
                     </div>
-                    <div>
-                        <p> Price Negotiable: 
+                    <div class="col-sm-8">
+                        <br>
+                        <p> Price Negotiable:
                             <span *ngIf="advertisment.negotiable">Yes</span>
-                            <span *ngIf="!advertisment.negotiable">No</span> 
+                            <span *ngIf="!advertisment.negotiable">No</span>
                         </p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <!-- <p class="text-center heartpara"><a href="#" class="heart"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a></p> -->
                     <div class="heartpara text-center">
-                        <button class="heart btn"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Add to Favourite</button>
+                        <button class="heart btn"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Add to
+                            Favourite</button>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -43,7 +45,8 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> &nbsp;&nbsp;Advertistment Description </h5> 
+                            <h5 class="card-title"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Advertistment Description </h5>
                             <hr>
                             <label class="card-text"> {{advertisment.description}}</label>
                         </div>
@@ -57,62 +60,63 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"> <i class="fa fa-car" aria-hidden="true"></i> &nbsp;&nbsp;Vehicle Details</h5>
+                            <h5 class="card-title"> <i class="fa fa-car" aria-hidden="true"></i> &nbsp;&nbsp;Vehicle
+                                Details</h5>
                             <hr>
                             <div class="table-responsive-sm">
                                 <table class="table table-borderless table-striped">
-                                  <tbody>
-                                      <tr >
-                                          <td> Brand </td>
-                                          <td> {{advertisment.brandType}} </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Model </td>
-                                          <td> {{advertisment.modelType}} </td>
-                                      </tr>
-                                      <tr>
-                                        <td> Model Number </td>
-                                        <td> {{advertisment.edition}} </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Grade </td>
-                                          <td> {{advertisment.grade}} </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Model Year</td>
-                                          <td> {{advertisment.modelYear}} </td>
-                                      </tr>
-                                      <tr>
-                                          <td>Body Type</td>
-                                          <td> {{advertisment.bodyType}} </td>
-                                      </tr>
-                                      <tr>
-                                          <td>Engine Capacity</td>
-                                          <td> {{advertisment.capacity}} </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Transmission </td>
-                                          <td *ngIf="advertisment.transmission == '1'"> Automatic </td>
-                                          <td *ngIf="advertisment.transmission == '2'"> Manual </td>
-                                          <td *ngIf="advertisment.transmission == '3'"> TipTronic </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Conditions </td>
-                                          <td *ngIf="advertisment.condition"> Used </td>
-                                          <td *ngIf="!advertisment.condition"> Brand New </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Fuel Type </td>
-                                          <td *ngIf="advertisment.fuelType == 1"> Petrol </td>
-                                          <td *ngIf="advertisment.fuelType == 2"> Diesel </td>
-                                          <td *ngIf="advertisment.fuelType == 3"> Hybrid </td>
-                                          <td *ngIf="advertisment.fuelType == 4"> Electric </td>
-                                      </tr>
-                                      <tr>
-                                          <td> Mileage </td>
-                                          <td> {{advertisment.milage}} </td>
-                                      </tr>
-                                  </tbody>  
+                                    <tbody>
+                                        <tr>
+                                            <td> Brand </td>
+                                            <td> {{advertisment.brandType}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Model </td>
+                                            <td> {{advertisment.modelType}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Model Number </td>
+                                            <td> {{advertisment.edition}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Grade </td>
+                                            <td> {{advertisment.grade}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Model Year</td>
+                                            <td> {{advertisment.modelYear}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Body Type</td>
+                                            <td> {{advertisment.bodyType}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Engine Capacity</td>
+                                            <td> {{advertisment.capacity}} </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Transmission </td>
+                                            <td *ngIf="advertisment.transmission == '1'"> Automatic </td>
+                                            <td *ngIf="advertisment.transmission == '2'"> Manual </td>
+                                            <td *ngIf="advertisment.transmission == '3'"> TipTronic </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Conditions </td>
+                                            <td *ngIf="advertisment.condition"> Used </td>
+                                            <td *ngIf="!advertisment.condition"> Brand New </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Fuel Type </td>
+                                            <td *ngIf="advertisment.fuelType == 1"> Petrol </td>
+                                            <td *ngIf="advertisment.fuelType == 2"> Diesel </td>
+                                            <td *ngIf="advertisment.fuelType == 3"> Hybrid </td>
+                                            <td *ngIf="advertisment.fuelType == 4"> Electric </td>
+                                        </tr>
+                                        <tr>
+                                            <td> Mileage </td>
+                                            <td> {{advertisment.milage}} </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -126,20 +130,25 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"> <i class="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; Add Comments</h5>
+                            <h5 class="card-title"> <i class="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; Add
+                                Comments</h5>
                             <hr>
                             <div class="container cmnt-container">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-offset-3">
                                         <div class="panel panel-info">
                                             <div class="panel-body">
-                                                <textarea *ngIf="isUserLogged && userDetails.role == 'User'" placeholder="Write your comment here!" [(ngModel)]="userComment.Name" class="cmnt-textarea"></textarea>
+                                                <textarea *ngIf="isUserLogged && userDetails.role == 'User'"
+                                                    placeholder="Write your comment here!"
+                                                    [(ngModel)]="userComment.Name" class="cmnt-textarea"></textarea>
                                                 <form class="form-inline">
-                                                    <button *ngIf="isUserLogged && userDetails.role == 'User'" class="btn" type="button" (click)="addComments()">Post Comment</button>
+                                                    <button *ngIf="isUserLogged && userDetails.role == 'User'"
+                                                        class="btn" type="button" (click)="addComments()">Post
+                                                        Comment</button>
                                                 </form>
 
                                                 <div class="comments">
-                                                    <div class="comment" *ngFor="let comment of lstComments" >
+                                                    <div class="comment" *ngFor="let comment of lstComments">
                                                         <div class="comment-avatar">
                                                             <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
                                                         </div>
@@ -178,7 +187,8 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"> <i class="fa fa-info" aria-hidden="true"></i> &nbsp;&nbsp;Advertistment Details</h5>
+                            <h5 class="card-title"> <i class="fa fa-info" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Advertistment Details</h5>
                             <hr>
                             <div class="table-responsive-sm">
                                 <table class="table table-borderless">
@@ -209,7 +219,8 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"> <i class="fa fa-user-o" aria-hidden="true"></i> &nbsp;&nbsp;Advertiser Details</h5>
+                            <h5 class="card-title"> <i class="fa fa-user-o" aria-hidden="true"></i>
+                                &nbsp;&nbsp;Advertiser Details</h5>
                             <hr>
                             <div class="table-responsive-sm">
                                 <table class="table table-borderless">
@@ -225,15 +236,19 @@
                                         <tr>
                                             <td> Contact Number </td>
                                             <td> {{advertisment.contactno}} </td>
-                                        </tr>  
+                                        </tr>
                                         <tr>
                                             <td> Rate Advertiser </td>
-                                            <td> 
+                                            <td>
                                                 <div class="rating">
-                                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                                    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                                    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                                    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                                    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                                    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
                                                 </div>
                                             </td>
-                                        </tr>  
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -248,10 +263,13 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp; Location</h5>
+                            <h5 class="card-title"> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;
+                                Location</h5>
                             <hr>
-                            <agm-map [latitude]="advertisment.latitude" [longitude]="advertisment.longitude" (mapClick)="onChoseLocation($event)">
-                                <agm-marker [latitude]="advertisment.latitude" [longitude]="advertisment.longitude"></agm-marker>
+                            <agm-map [latitude]="advertisment.latitude" [longitude]="advertisment.longitude"
+                                (mapClick)="onChoseLocation($event)">
+                                <agm-marker [latitude]="advertisment.latitude" [longitude]="advertisment.longitude">
+                                </agm-marker>
                             </agm-map>
                         </div>
                     </div>

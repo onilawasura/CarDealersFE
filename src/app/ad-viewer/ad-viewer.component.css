@@ -125,17 +125,17 @@ agm-map {
 }
 
 .btnreport{
-    border: 1px solid #D65A31;
-    background-color: #D65A31;
+    border: 1px solid #393E46;
+    background-color: #393E46;
     color:#FFFFFF;
-    border-radius: 12px;
+    border-radius: 5px;
     margin: 0;
     padding: 8px 10px;
 }
 .btnreport:hover{
     border: 1px solid #D65A31;
-    color: #D65A31;
-    background-color: transparent;
+    color: #FFFFFF;
+    background-color: #D65A31;
 }
 .card-title{
     color:#393E46;
@@ -144,35 +144,37 @@ agm-map {
     content: "\2605";
     position: absolute;
  }
- .rating {
+.rating {
     unicode-bidi: bidi-override;
     direction: rtl;
-  }
-  .rating > span:hover:before,
-  .rating > span:hover ~ span:before {
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
      content: "\2605";
      position: absolute;
-  }
-  .rating {
+     color: #393E46;
+}
+.rating {
     unicode-bidi: bidi-override;
     direction: rtl;
-  }
-  .rating > span {
+}
+.rating > span {
     display: inline-block;
     position: relative;
-    width: 1.1em;
-  }
-  .rating > span:hover:before,
-  .rating > span:hover ~ span:before {
+    width: 1.5em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
      content: "\2605";
      position: absolute;
-  }
-  .heart{
+}
+
+.heart{
       color: #393E46;
       border: none;
-  }
-  .heart:hover{
+}
+.heart:hover{
       color: #D65A31;
       border: none;
       background-color: transparent;
-  }
+}
