@@ -1,35 +1,40 @@
-
 <div class="container">
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-8">
-            <h5>User Name</h5>
-            <hr>
-            <p class="text-center"> <i class="fa fa-user-o fa-5x" aria-hidden="true"></i> <br> Welcome to account</p>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+      <h5>User Name</h5>
+      <hr>
+      <p class="text-center"> <i class="fa fa-user-o fa-5x" aria-hidden="true"></i> <br> Welcome to account</p>
 
-            <div *ngIf="filteredAdDetails.length == 0"  class="notfound">
-              <div class="headings">
-                <h1>Oops!</h1>
-                <h2>You don't have any ads yet.</h2>
-              </div>
-              <a href="postad"> Post Your Ad Now </a>
-            </div>
-           
-
-            <div class="row row-cols-1 row-cols-md-3">
-              <div class="col mb-4" *ngFor="let ad of filteredAdDetails">
-                <a  *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
-                  <div class="card">
-                    <img src="{{ad.url}}" class="card-img-top" alt="profile image">
-                    <div class="card-body">
-                      <h5 class="card-title"><strong> {{ad.adTitle}} </strong></h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-           
+      <div *ngIf="filteredAdDetails.length == 0" class="notfound">
+        <div class="headings">
+          <h1>Oops!</h1>
+          <h2>You don't have any ads yet.</h2>
         </div>
+        <a href="postad"> Post Your Ad Now </a>
+      </div>
+
+      <hr>
+      <div class="card-body">
+        <div class="row row-cols-1 row-cols-xl-3">
+          <div class="col mb-4" *ngFor="let ad of filteredAdDetails">
+            <a *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
+              <div class="card">
+                <img src="{{ad.url}}" class="card-img-top" alt="profile image">
+                <div class="card-body">
+                  <h5 class="card-title"><strong> {{ad.adTitle}} </strong></h5>
+                  <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
+                  <hr>
+                  <div class="stats">
+                    <h5 style="color: #393E46;"> Price: Rs. {{ad.price | number}}.00</h5>
+                  </div>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

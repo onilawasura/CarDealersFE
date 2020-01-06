@@ -1,6 +1,11 @@
 .row{
     padding-top: 15px;
 }
+.fa-user-o{
+    color: #00ADB5;
+    box-shadow: rgba(0, 0, 0, .15);
+}
+
 h1{
     font-family: 'Raleway', sans-serif;
     font-size: 236px;
@@ -56,4 +61,27 @@ h2{
     background: #D65A31;
     font-size: 18px;
     transition: .2s all;
+}
+.card{
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    border: none;
+}
+
+.card-title{
+    margin: 0;
+    color: #393E46;
+    text-transform: capitalize;
+    font-size: 30px;
+}
+a{
+    text-decoration: none;
+    background-color: transparent
+ }
+.category{
+    font-size: 14px;
+    font-weight: normal;
+    color: #393E46;
+    margin-bottom: 0px;
+    padding-top: 1rem;
 }
