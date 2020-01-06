@@ -113,8 +113,8 @@ getAdvertisement(){
   });
 }
 
-addToFavourite(){
-  
+addToFavourite(item){
+  var xx = item;
 }
 
 setImages(img){
