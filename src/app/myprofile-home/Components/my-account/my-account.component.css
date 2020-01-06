@@ -80,3 +80,16 @@ a{
     margin-bottom: 0px;
     padding-top: 1rem;
 }
+.btndelete{
+    border: 1px solid #D65A31;
+    background-color: transparent;
+    color:#D65A31;
+    border-radius: 5px;
+    margin: 0;
+    padding: 8px 10px;
+}
+.btndelete:hover{
+    border: 1px solid #D65A31;
+    color: #FFFFFF;
+    background-color: #D65A31;
+}

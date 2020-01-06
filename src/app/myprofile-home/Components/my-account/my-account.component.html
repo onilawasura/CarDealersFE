@@ -18,8 +18,8 @@
       <div class="card-body">
         <div class="row row-cols-1 row-cols-xl-3">
           <div class="col mb-4" *ngFor="let ad of filteredAdDetails">
-            <a *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
               <div class="card">
+                <a *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
                 <img src="{{ad.url}}" class="card-img-top" alt="profile image">
                 <div class="card-body">
                   <h5 class="card-title"><strong> {{ad.adTitle}} </strong></h5>
@@ -30,8 +30,9 @@
                   </div>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
+              </a>
+              <button class="btn btndelete btn-block" type="button">Delete</button>
               </div>
-            </a>
           </div>
         </div>
       </div>
