@@ -53,7 +53,9 @@ export class MyAccountComponent implements OnInit {
 
   deleteAd(adId){
     if(confirm('Are your sure you want to delete this ad?')){
-      this.profileService.DeleteAdvertistment(adId).subscribe(res=>{
+      this.profileService.DeleteAdvertistment(adId).
+      subscribe((res: any)=>{
+        var xx = res;
         this.getAllAdvertisements();
       });
     }

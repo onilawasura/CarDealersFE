@@ -4,6 +4,8 @@ import { CreateadModel } from './createad-model';
 
 import { AgmCoreModule } from '@agm/core';
 import { UserService } from '../user/Sahred/user.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-createad',
@@ -16,7 +18,7 @@ export class CreateadComponent implements OnInit {
   // lng: number = 80.6451931695691;
 
 
-  constructor(private createadService: CreateAdService, private userService: UserService) { }
+  constructor(private createadService: CreateAdService, private userService: UserService, private toastr: ToastrService, private router: Router) { }
 
   categoryData: any;
   brandData: any;
@@ -149,7 +151,9 @@ export class CreateadComponent implements OnInit {
 
     this.createadService.uploadFiles(frmData)
       .subscribe((data: any) => {
-        alert(data["message"]);
+        //alert(data["message"]);
+        this.toastr.success(data["message"]);
+        this.router.navigate(['/home'])
       }, error => {
         console.log(error);
       })

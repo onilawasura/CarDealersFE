@@ -1,1 +1,53 @@
-<p>admin-panel works!</p>
+<div class="container-fluid">
+    <div class="row"> &nbsp;&nbsp;&nbsp;</div>
+    <div class="row">
+        <div class="col-sm-2">
+            <ul class="nav flex-column " id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-panel" role="tab" aria-controls="pills-panel" aria-selected="true">
+                        <i class="fa fa-desktop" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;Panel
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="collapse">
+                    <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-classifieds" role="tab" aria-controls="pills-classifieds" aria-selected="true">
+                        <i class="fa fa-tag" aria-hidden="true"></i>  &nbsp;&nbsp;&nbsp; Classifieds &nbsp;&nbsp;&nbsp;
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="class-sm-10 tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-panel" role="tabpanel" aria-labelledby="pills-panel-tab">
+                <h3 class="h3"> Site Usage Statistic</h3>
+                <hr>
+                <p><span>This panel shows how many visitors your website had the past month.</span></p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"> Ads </h5> <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"> Users </h5> <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"> Report Ads </h5> <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-classifieds" role="tabpanel" aria-labelledby="pills-classifieds-tab">
+                <h3 class="h3"> </h3>
+            </div>
+        </div>
+    </div>
+</div>

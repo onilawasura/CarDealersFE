@@ -15,7 +15,10 @@ export class HomeComponent implements OnInit {
   img: string  = "assets/Bugatti.jpg";
   constructor(private toastr: ToastrService, private homeService: HomeServiceService, private userService: UserService, private createAdService: CreateAdService) { }
   adDetails: any;
-  filteredAdDetails: any;
+  //filteredAdDetails: any;
+  filteredAdDetails = {
+    length:1
+  }
   private _searchTerm: string;
   userDetails : any;
 
@@ -114,7 +117,7 @@ export class HomeComponent implements OnInit {
       .subscribe((data: any) => {
         this.adDetails = data;
         this.filteredAdDetails = this.adDetails;
-        console.log("asasa" + this.filteredAdDetails.length);
+        //console.log("asasa" + this.filteredAdDetails.length);
       })
 
   }

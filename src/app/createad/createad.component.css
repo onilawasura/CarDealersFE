@@ -77,3 +77,6 @@ agm-map {
     position: relative;
     z-index: 100;
   }
+  textarea{
+      max-lines: 100;
+  }

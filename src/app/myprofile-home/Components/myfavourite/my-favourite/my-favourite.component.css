@@ -1,3 +1,89 @@
 .row{
     padding-top: 20px;
 }
+.card{
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    border: none;
+
+}
+
+.card-title{
+    margin: 0;
+    color: #393E46;
+    text-transform: capitalize;
+    font-size: 30px;
+}
+a{
+    text-decoration: none;
+    background-color: transparent
+ }
+.category{
+    font-size: 14px;
+    font-weight: normal;
+    color: #393E46;
+    margin-bottom: 0px;
+    padding-top: 1rem;
+}
+.card-footer{
+    border: none;
+}
+
+h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 236px;
+    font-weight: 200;
+    margin: 0;
+    color: #211b19;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+h2{
+    font-family: Raleway, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #211b19;
+    background: #fff;
+    padding: 10px 5px;
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.headings{
+    position: relative;
+    height: 200px;
+    margin: 0 auto 20px;
+    z-index: -1;
+}
+
+.notfound{
+    position: absolute;
+    left: 50%;
+    top: 170%;
+    transform: translate(-50%,-50%);
+    max-width: 520px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+}
+.notfound a {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 13px 23px;
+    background: #D65A31;
+    font-size: 18px;
+    transition: .2s all;
+}

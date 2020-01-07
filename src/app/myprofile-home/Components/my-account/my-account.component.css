@@ -93,3 +93,9 @@ a{
     color: #FFFFFF;
     background-color: #D65A31;
 }
+.card-footer{
+    border: none;
+}
+.deletebtnContainer{
+    margin-bottom: 10px;
+}

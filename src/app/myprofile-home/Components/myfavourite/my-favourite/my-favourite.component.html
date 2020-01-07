@@ -1,32 +1,43 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-8">
-            <h5>My Favourite</h5>
-            <hr>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+      <h5>My Favourite</h5>
+      <hr>
 
-            <div class="card-body">
-                <div class="row row-cols-1 row-cols-xl-3">
-                  <div class="col mb-4" *ngFor="let ad of filteredAdDetails">
-                      <div class="card">
-                        <a *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
-                        <img src="{{ad.url}}" class="card-img-top" alt="profile image">
-                        <div class="card-body">
-                          <h5 class="card-title"><strong> {{ad.adTitle}} </strong></h5>
-                          <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
-                          <hr>
-                          <div class="stats">
-                            <h5 style="color: #393E46;"> Price: Rs. {{ad.price | number}}.00</h5>
-                          </div>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </a>
-                      <button class="btn btndelete btn-block" type="button">Delete</button>
-                      </div>
+      <div *ngIf="filteredAdDetails.length == 0" class="notfound">
+        <div class="headings">
+          <h1>Oops!</h1>
+          <h2>You don't have any Favourites.</h2>
+        </div>
+        <a href="home"> Add to Favourites </a>
+      </div>
+
+      <hr>
+
+
+        <div class="row">
+          <div class="col-sm-12" *ngFor="let ad of filteredAdDetails">
+            <div class="card mb-3">
+              <a *ngIf="filteredAdDetails.length > 0" href="/ad/{{ad.adId}}">
+                <img src="{{ad.url}}" class="card-img-top" alt="profile image">
+                <div class="card-body">
+                  <h5 class="card-title"><strong> {{ad.adTitle}} </strong></h5>
+                  <p class="category">{{ad.destination}} <br> {{ad.categoryType}} </p>
+                  <hr>
+                  <div class="card-footer">
+                    <div class="stats">
+                      <h5 style="color: #393E46;"> Price: Rs. {{ad.price | number}}.00</h5>
+                    </div>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                   </div>
                 </div>
-              </div>
-            
+              </a>
+            </div>
+          </div>
         </div>
+
+
     </div>
+  </div>
 </div>

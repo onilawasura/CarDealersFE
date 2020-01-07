@@ -169,5 +169,8 @@ input {
 	right: 0;
 	transform: translateX(0);
 }
+.text-danger{
+	font-size: 14px;
+}
 
 
