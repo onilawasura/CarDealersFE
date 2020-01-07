@@ -13,6 +13,9 @@ export class AdViewerService {
   getAdvertisementUrl: string;
   addCommentsUrl: string;
   getCommentsUrl: string;
+  manageFavouriteUrl: string;
+  getFavouriteUrl: string;
+  reportedAdUrl: string;
 
   getAdvertisement(id){
     this.getAdvertisementUrl  = this.BaseURI + '/advertistment/GetAdvertisment/'+id;
@@ -29,5 +32,20 @@ export class AdViewerService {
   getComments(adId){
     this.getCommentsUrl  = this.BaseURI + '/advertistment/GetComments/'+adId;
     return this.http.get(this.getCommentsUrl);
+  }
+
+  manageFavourite(favouriteAdvertisment){
+    this.manageFavouriteUrl = this.BaseURI + '/advertistment/ManageFavouriteAdvertisment';
+    return this.http.post(this.manageFavouriteUrl, favouriteAdvertisment);
+  }
+
+  getFavourite(userId: string, adId: number){
+    this.getFavouriteUrl = this.BaseURI + '/advertistment/IsUserAdvertisment/' +userId +'/' + adId;
+    return this.http.get(this.getFavouriteUrl);
+  }
+
+  addReportedAdvertisment(reportAdvertismentObj){
+    this.reportedAdUrl = this.BaseURI + '/advertistment/AddRepordedAdvertisment';
+    return this.http.post(this.reportedAdUrl, reportAdvertismentObj);
   }
 }

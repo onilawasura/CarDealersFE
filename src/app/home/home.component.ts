@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
   set searchTerm(value: string){
     this._searchTerm = value;
     this.filteredAdDetails = this.filteredAdDetailss(value);
+    
   }
 
   // filteredAdDetailss(searchString: string){
@@ -113,6 +114,7 @@ export class HomeComponent implements OnInit {
       .subscribe((data: any) => {
         this.adDetails = data;
         this.filteredAdDetails = this.adDetails;
+        console.log("asasa" + this.filteredAdDetails.length);
       })
 
   }

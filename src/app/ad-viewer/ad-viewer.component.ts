@@ -12,7 +12,20 @@ export class AdViewerComponent implements OnInit {
 
   currentUrlId: string;
   images: string[];
-  advertisment: any;
+  //advertisment: any;
+  advertisment = {
+    negotiable: false
+  }
+
+  imgSize = {
+    width: 400, 
+    height: 300, 
+    space: 4
+  }
+
+  slideImg = 1;
+  inf = true;
+  //advertisment["negotiable"] = false;
   imageObject: Array<object> ;
 
   isUserLogged = false;
@@ -36,6 +49,16 @@ export class AdViewerComponent implements OnInit {
     isFavourite: false
   }
 
+  favouriteAdvertisment = {
+    FkUserId: "",
+    FkAdvertistmentId: 0
+  }
+
+  reportedAdvertisment = {
+    FkUserId: "",
+    FkAdvertistmentId: 0
+  }
+
   constructor(private adViewerService: AdViewerService,  private activatedRoute: ActivatedRoute,  private userService: UserService) { }
 
   ngOnInit() {
@@ -57,6 +80,7 @@ export class AdViewerComponent implements OnInit {
     }
     this.onloadGetUserData();
     this.getComments();
+    
 
   }
 
@@ -67,7 +91,8 @@ export class AdViewerComponent implements OnInit {
         this.userDetails.fullName = res["fullName"];
         this.userDetails.userName = res["userName"];
         this.userDetails.role = res["role"];
-        this.userDetails.userId = res["id"]
+        this.userDetails.userId = res["id"];
+        this.getFavourite();
       },
       err => {
         console.log(err);
@@ -119,6 +144,33 @@ getAdvertisement(){
 addToFavourite(){
   this.item.isFavourite = !this.item.isFavourite;
   var xx = this.item.isFavourite;
+  this.favouriteAdvertisment.FkAdvertistmentId = +this.currentUrlId;
+  this.favouriteAdvertisment.FkUserId = this.userDetails.userId;
+  this.adViewerService.manageFavourite(this.favouriteAdvertisment)
+    .subscribe((data: any) => {
+      var xx =data;
+    })
+}
+
+getFavourite(){
+  // this.favouriteAdvertisment.FkAdvertistmentId = +this.currentUrlId;
+  // this.favouriteAdvertisment.FkUserId = this.userDetails.userId;
+
+  this.adViewerService.getFavourite(this.userDetails.userId, +this.currentUrlId)
+    .subscribe((data: any) => {
+      this.item.isFavourite = data;
+    })
+
+}
+
+addReportedAdvertisment(){
+  this.reportedAdvertisment.FkAdvertistmentId= +this.currentUrlId;
+  this.reportedAdvertisment.FkUserId = this.userDetails.userId;
+
+  this.adViewerService.addReportedAdvertisment(this.reportedAdvertisment)
+    .subscribe((data: any) =>{
+      
+    })
 }
 
 setImages(img){

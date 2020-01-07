@@ -11,6 +11,7 @@ export class ProfileService {
   readonly BaseURI = 'https://localhost:44393/api';
 
   getAdvertisementByUserUrl: string;
+  getFavouriteAdvertisementByUserUrl: string;
 
   getAdvertisementByUser(userId){
 
@@ -21,6 +22,12 @@ export class ProfileService {
     return this.http.post(this.getAdvertisementByUserUrl, jsonObj);
   }
 
+  getFavouriteAdvertisementByUser(userId){
+    this.getFavouriteAdvertisementByUserUrl = this.BaseURI + '/advertistment/GetAdvertismentByFavourite/' +userId;
+    return this.http.get(this.getFavouriteAdvertisementByUserUrl);
+  }
+
+  
   DeleteAdvertistment(adId){
     return this.http.get(this.BaseURI + '/advertistment/DeleteAdvertisment/' + adId)
   }
