@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdViewerService } from './ad-viewer.service';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user/Sahred/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ad-viewer',
@@ -59,7 +60,7 @@ export class AdViewerComponent implements OnInit {
     FkAdvertistmentId: 0
   }
 
-  constructor(private adViewerService: AdViewerService,  private activatedRoute: ActivatedRoute,  private userService: UserService) { }
+  constructor(private adViewerService: AdViewerService,  private activatedRoute: ActivatedRoute,  private userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -147,8 +148,15 @@ addToFavourite(){
   this.favouriteAdvertisment.FkAdvertistmentId = +this.currentUrlId;
   this.favouriteAdvertisment.FkUserId = this.userDetails.userId;
   this.adViewerService.manageFavourite(this.favouriteAdvertisment)
-    .subscribe((data: any) => {
+    .subscribe((data: boolean) => {
       var xx =data;
+      if(data){
+        this.toastr.success('Added To Favourites !');
+      }else{
+        this.toastr.success('Removed from Favourites !');
+      }
+    }, error => {
+      console.log(error);
     })
 }
 
@@ -169,7 +177,7 @@ addReportedAdvertisment(){
 
   this.adViewerService.addReportedAdvertisment(this.reportedAdvertisment)
     .subscribe((data: any) =>{
-      
+      this.toastr.success('Advertisment Reported Successfully !');
     })
 }
 

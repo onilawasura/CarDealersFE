@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <button class="btn btnreport btn-block" (click)="addReportedAdvertisment()" type="button">Report Adveritistment</button>
+                    <button class="btn btnreport btn-block" *ngIf="isUserLogged && userDetails.role == 'User'" (click)="addReportedAdvertisment()" type="button">Report Adveritistment</button>
                 </div>
             </div>
             <div class="row">
