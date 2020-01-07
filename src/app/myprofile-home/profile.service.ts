@@ -28,4 +28,7 @@ export class ProfileService {
   }
 
   
+  DeleteAdvertistment(adId){
+    return this.http.get(this.BaseURI + '/advertistment/DeleteAdvertisment/' + adId)
+  }
 }

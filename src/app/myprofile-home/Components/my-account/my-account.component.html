@@ -28,10 +28,10 @@
                   <div class="stats">
                     <h5 style="color: #393E46;"> Price: Rs. {{ad.price | number}}.00</h5>
                   </div>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <p class="card-text"><small class="text-muted">Last updated {{ad.date | timeAgo}}</small></p>
                 </div>
               </a>
-              <button class="btn btndelete btn-block" type="button">Delete</button>
+              <button class="btn btndelete btn-block" type="button" (click) = "deleteAd(ad.adId)">Delete</button>
               </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../profile.service';
 import { UserService } from 'src/app/user/Sahred/user.service';
 
+
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
@@ -50,6 +51,12 @@ export class MyAccountComponent implements OnInit {
       })
   }
 
-
+  deleteAd(adId){
+    if(confirm('Are your sure you want to delete this ad?')){
+      this.profileService.DeleteAdvertistment(adId).subscribe(res=>{
+        this.getAllAdvertisements();
+      });
+    }
+  }
 
 }
