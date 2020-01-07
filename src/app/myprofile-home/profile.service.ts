@@ -21,5 +21,7 @@ export class ProfileService {
     return this.http.post(this.getAdvertisementByUserUrl, jsonObj);
   }
 
-  
+  DeleteAdvertistment(adId){
+    return this.http.get(this.BaseURI + '/advertistment/DeleteAdvertisment/' + adId)
+  }
 }
